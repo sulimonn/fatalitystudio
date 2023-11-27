@@ -73,6 +73,11 @@ code {
   min-width: unset;
   max-width: unset;
 }
+@media screen and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
 @media screen and (max-width: 600px) {
   .container {
     width: 90%;
