@@ -1,0 +1,121 @@
+.intro {
+  text-align: left;
+  height: 100vh;
+  z-index: -5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-white);
+}
+.intro h1::first-line {
+  color: var(--color-white);
+}
+.intro h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: var(--color-white);
+}
+.intro h1 .yellow {
+  color: var(--color-ylw);
+}
+.intro .order-project {
+  text-align: left;
+  position: relative;
+}
+
+.intro .order-project p {
+  width: 70%;
+  padding: 0;
+}
+.intro__img {
+  position: absolute;
+  right: -120px;
+  top: 0;
+  width: 80%;
+  animation: intropic 2s linear alternate infinite;
+}
+.intro__img img {
+  width: 100%;
+}
+.intro__btn {
+  width: 30%;
+  padding-top: 30px;
+}
+.order-project {
+  margin-top: -30px;
+}
+
+@media screen and (max-width: 900px) {
+  .intro {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+  .container {
+    width: 100vw;
+  }
+  .blurred-round {
+    width: 100vw;
+    height: 100vw;
+  }
+  .order-project {
+    margin-top: 0;
+  }
+  .intro .order-project p {
+    text-align: right;
+    width: 100%;
+    line-height: 25px;
+  }
+  .intro .order-project .intro__img {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    right: 0;
+  }
+  .intro__img img {
+    width: 100%;
+  }
+  .intro__btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container {
+    width: 100vw;
+  }
+  .intro h1 {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: calc(100vw / 6.5);
+    font-weight: 500;
+  }
+  .intro .order-project p {
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    width: 100%;
+  }
+  .intro .order-project .intro__img {
+    width: 100%;
+  }
+  .intro__img img {
+    width: 100%;
+  }
+  .intro__btn {
+    display: flex;
+  }
+}
+
+@keyframes intropic {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 0;
+  }
+}

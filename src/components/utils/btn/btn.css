@@ -1,0 +1,92 @@
+.btn-outline-xl {
+  width: 100%;
+  padding: 9.7px 26px 12px 26px;
+}
+.btn-outline-sm {
+  padding: 6.7px 26px 9px 26px;
+}
+.btn-outline {
+  text-align: center;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: 45px;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+.btn-outline svg {
+  transition: all 0.2s ease-in-out;
+  fill: var(--color-white);
+  padding-left: 10px;
+  height: auto;
+  width: auto;
+}
+
+.btn-outline:hover {
+  color: var(--color-black);
+  border-color: var(--color-ylw);
+  background-color: var(--color-ylw);
+}
+.btn-outline:hover svg {
+  fill: var(--color-black);
+}
+
+.btn-blue {
+  width: 100%;
+  text-align: center;
+  color: var(--color-white);
+  background: var(--color-blue);
+  border: none;
+  border-radius: 45px;
+  padding: 15.7px 30px 19px 30px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-blue svg {
+  transition: all 0.2s ease-in-out;
+  fill: var(--color-white);
+  padding-left: 10px;
+  height: auto;
+  width: auto;
+}
+.btn-blue:hover {
+  background: #08fffc;
+}
+
+.btn-simple {
+  display: flex;
+  align-items: baseline;
+  border: none;
+  text-align: center;
+  color: var(--color-white);
+  background-color: transparent;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+.btn-simple svg {
+  transition: all 0.2s ease-in-out;
+  fill: var(--color-white);
+  padding-left: 10px;
+  height: 9px;
+  width: auto;
+}
+
+.btn-simple:hover {
+  color: var(--color-ylw);
+}
+
+.btn-simple:hover svg {
+  fill: yellow;
+}
+@media screen and (max-width: 500px) {
+  .btn-outline-sm {
+    border-width: 1px;
+  }
+  .btn1 {
+    font-size: var(--fs-mb-btn1);
+  }
+  .btn2 {
+    font-size: var(--fs-mb-btn2);
+  }
+  .btn-simple svg {
+    height: 10px;
+  }
+}

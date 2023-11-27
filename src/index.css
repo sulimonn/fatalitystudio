@@ -4,14 +4,37 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-black);
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: 'Bowler';
+  src: url('./fonts/ofont.ru_Bowler.ttf') format('truetype');
+  font-weight: 500;
+}
 :root {
-  --ff-bowler: 'BOWLER', sans-serif;
+  --ff-bowler: 'Bowler', sans-serif;
   --ff-exo-2: 'Exo 2', serif;
   --color-black: #141416;
   --color-white: #fff;
@@ -19,8 +42,55 @@ code {
   --color-gray: #a9a9a9;
   --color-drk-gray: #242424;
   --color-blue: #08fffc99;
-}
 
+  --fs-dt-h1: calc(100vw / 7);
+  --fs-dt-h2: 160px;
+  --fs-dt-h3: 38px;
+  --fs-dt-h4: 29px;
+  --fs-dt-quote: 42px;
+  --fs-dt-p: 15px;
+  --fs-dt-btn1: 22px;
+  --fs-dt-btn2: 16px;
+  --fs-dt-d1: 20px;
+  --fs-dt-d2: 12px;
+  --fs-dt-mi: 22px;
+
+  --fs-mb-h1: 57px;
+  --fs-mb-h2: 38px;
+  --fs-mb-h3: 24px;
+  --fs-mb-h4: 22px;
+  --fs-mb-quote: 20px;
+  --fs-mb-p: 14px;
+  --fs-mb-btn1: 18px;
+  --fs-mb-btn2: 14px;
+  --fs-mb-d1: 18px;
+  --fs-mb-d2: 9px;
+  --fs-mb-mi: 18px;
+}
+.container {
+  padding: 0;
+  width: 85%;
+  min-width: unset;
+  max-width: unset;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 0 20px !important;
+  }
+}
 div {
   cursor: default;
+}
+
+.header {
+  z-index: 3;
+}
+section {
+  position: relative;
+  z-index: 2;
+}
+footer {
+  position: relative;
+  z-index: 1;
 }
