@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BtnSimple from '../../utils/btn/BtnSimple';
 
 function PortfolioCard({ data }) {
+  useEffect(() => {
+    const cards = document.querySelectorAll('.portfolio-card');
+    const handleResize = () => {
+      if (cards) {
+        cards.forEach((item) => {
+          if (item.clientWidth > 700) {
+            item.classList.remove('group');
+            item.classList.add('single');
+          } else {
+            item.classList.add('group');
+            item.classList.remove('single');
+          }
+        });
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <Link
       to={'/portfolio/' + data.id}

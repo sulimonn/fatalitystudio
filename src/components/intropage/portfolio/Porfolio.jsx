@@ -13,7 +13,7 @@ function Portfolio() {
       <div className="portfolio-rigt-side">
         <div className="portfolio-cards">
           {portfolios.map((item) => (
-            <PortfolioCard data={item} />
+            <PortfolioCard key={item.id} data={item} />
           ))}
         </div>
         <div className="portfolio-link">
