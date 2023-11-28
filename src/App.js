@@ -9,6 +9,7 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import FeedbackPage from './components/feedbackPage/FeedbackPage';
 import Blog from './components/blogPage/Blog';
+import PorrtfoliosPage from './components/portfoliosPage/PortfoliosPage';
 
 function App() {
   // const particlesInit = useCallback(async (engine) => {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<IntroPage />}></Route>
             <Route path="/feedback" element={<FeedbackPage />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/portfolio" element={<PorrtfoliosPage />}></Route>
           </Routes>
         </div>
         {shouldDisplayHeader && <Contact />}

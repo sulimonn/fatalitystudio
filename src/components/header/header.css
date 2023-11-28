@@ -76,6 +76,7 @@ header .container .nav li {
   line-height: 26.4px;
 }
 .nav-link {
+  z-index: 1;
   text-decoration: none;
   padding: 0;
   position: relative;
@@ -83,19 +84,21 @@ header .container .nav li {
   scroll-behavior: smooth;
   transition: all 0.3s ease;
 }
-.nav-link:hover {
+.nav-link:hover,
+.active-link:hover {
   color: var(--color-ylw);
 }
 
 .active-link::after {
+  color: var(--color-ylw);
   content: '';
   border-bottom: 1px solid var(--color-white);
-  left: 0;
-  bottom: 0;
   position: absolute;
-  right: 100%;
-  transition: all 0.3s ease;
+  bottom: 0;
+  left: 0;
   right: 0;
+  z-index: 0;
+  transition: all 0.3s ease;
 }
 
 .active-link:hover::after {

@@ -8,7 +8,7 @@ function Portfolio() {
   return (
     <div className="portfolio content" id="portfolio">
       <div className="portfolio-title">
-        <h4 className="headline3">Портфолио</h4>
+        <h3 className="headline3">Портфолио</h3>
       </div>
       <div className="portfolio-rigt-side">
         <div className="portfolio-cards">

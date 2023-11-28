@@ -50,7 +50,7 @@
 .blue.portfolio-card:hover .portfolio-card-img-phone {
   transform: translateX(-5em) translateY(-3em) scale(1.3, 1.3);
 }
-.group.portfolio-card:hover .position-absolute {
+.portfolio-card:hover .position-absolute {
   transform: translateY(60px);
 }
 .portfolio-card-img-svg .app,
@@ -152,16 +152,16 @@
   transform: translateY(-120%);
 }
 .single.portfolio-card:hover .portfolio-card-img-svg .app {
-  transform: translateX(-120%);
+  transform: translateX(-14em);
 }
 .single.portfolio-card:hover .portfolio-card-img-svg .service {
   transform: translateX(-220%);
 }
 .single.portfolio-card:hover .portfolio-card-img-phone .phone {
-  transform: translateX(-100%) scale(1, 1);
+  transform: translateX(-7em) scale(1, 1);
 }
 .single.portfolio-card:hover .portfolio-card-img-phone .bg {
-  transform: translateX(-100%);
+  transform: translateX(-11em);
 }
 .single .portfolio-card-img-phone .phone,
 .single .portfolio-card-img-phone .bg {
