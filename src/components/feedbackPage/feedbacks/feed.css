@@ -9,11 +9,11 @@
   line-height: 0.85em;
   white-space: wrap;
 }
+.feedback_head h2::first-line {
+  color: var(--color-white);
+}
 .headline2 {
   color: var(--color-ylw);
-}
-.headline2::first-line {
-  color: var(--color-white);
 }
 .feedback_head p {
   padding-top: 20px;
