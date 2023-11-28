@@ -1,13 +1,14 @@
 .portfolio {
-  height: 100%;
-  margin-bottom: 120px;
 }
 .content {
+  height: 100%;
+  margin-bottom: 120px;
   display: grid;
   grid-template-columns: 26% 1fr;
 }
 .content .headline3 {
   color: var(--color-white);
+  width: 90%;
 }
 
 .portfolio-cards {
@@ -214,7 +215,7 @@
   .group.portfolio-card:hover .portfolio-card-img-svg .service {
     transform: translateX(-200%);
   }
-  .portfolio {
+  .content {
     display: block;
   }
   .heading h1 {
