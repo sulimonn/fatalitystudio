@@ -66,8 +66,7 @@ function App() {
             },
             particles: {
               color: {
-                value: '#ffffff',
-                opacity: 0.1,
+                value: 'rgba(255, 255, 255, 0.3)',
               },
               links: {
                 color: '#ffffff',
