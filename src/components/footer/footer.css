@@ -54,11 +54,8 @@
   row-gap: 15px;
 }
 .footer-contents .content-item {
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
-  font-family: 'Exo 2';
-  font-size: 22px;
-  font-weight: 500;
   cursor: pointer;
   text-align: left;
 }
@@ -74,7 +71,7 @@
 }
 
 .footer-icon:hover svg {
-  fill: rgb(249, 163, 14);
+  fill: var(--color-ylw);
 }
 .footer-conf {
   display: flex;
@@ -83,8 +80,9 @@
   width: auto;
 }
 .footer-conf-item {
-  color: gray;
+  color: var(--color-gray);
   text-decoration: none;
+  transition: all 0.2s;
 }
 
 .footer-conf-item:hover,
@@ -100,7 +98,7 @@
     padding: 10px 10px 60px 10px;
   }
   .footer-container .side:last-child {
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--color-gray);
   }
   .footer-container .side {
     flex-direction: column-reverse;

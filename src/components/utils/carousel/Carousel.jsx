@@ -3,12 +3,7 @@ import './carousel.css';
 
 function Carousel({ data, id, bg }) {
   return (
-    <div
-      id={'carousel' + id}
-      className="carousel slide"
-      data-bs-ride="carousel"
-      data-bs-touch="true"
-    >
+    <div id={'carousel' + id} className="carousel slide">
       <div className="carousel-indicators">
         {data.map((_, index) => (
           <button

@@ -185,14 +185,15 @@ function Header() {
               </li>
             </ul>
             <div className="text-end">
-              <BtnOutline
+              <Link
+                to="#contact"
                 onClick={() => {
                   scrollToContact();
                   hideCollapse();
                 }}
               >
-                Заказать проект
-              </BtnOutline>
+                <BtnOutline>Заказать проект</BtnOutline>
+              </Link>
             </div>
           </div>
         </div>

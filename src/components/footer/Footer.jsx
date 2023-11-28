@@ -91,13 +91,13 @@ function Footer() {
         </div>
         <div className="side">
           <div className="footer-contents">
-            <Link to="/portfolio" className="content-item">
+            <Link to="/portfolio" className="content-item menu-i">
               Портфолио
             </Link>
-            <Link to="/feedback" className="content-item">
+            <Link to="/feedback" className="content-item menu-i">
               Отзывы
             </Link>
-            <Link to="/blog" className="content-item">
+            <Link to="/blog" className="content-item menu-i">
               Блог
             </Link>
           </div>
@@ -183,10 +183,10 @@ function Footer() {
               </Link>
             </div>
             <div className="footer-conf">
-              <Link to="/" className="footer-conf-item">
+              <Link to="/" className="footer-conf-item paragraph">
                 Публичная оферта
               </Link>
-              <Link to="/" className="footer-conf-item">
+              <Link to="/" className="footer-conf-item paragraph">
                 Политика конфиденциальности
               </Link>
             </div>

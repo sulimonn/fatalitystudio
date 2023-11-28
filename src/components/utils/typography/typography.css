@@ -63,7 +63,7 @@
 }
 .nav-link:active,
 .nav-link:focus {
-  text-decoration: 1px solid white;
+  text-decoration: 1px solid var(--color-white);
   color: unset;
 }
 
