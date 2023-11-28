@@ -107,12 +107,11 @@ body {
   bottom: 0;
   height: 100%;
 }
-#tsparticles {
+#particles {
   top: 200px;
   bottom: 0;
+  height: 100%;
   position: absolute;
   overflow: visible;
-  height: 100%;
-  width: 100%;
-  z-index: -10;
+  z-index: 0;
 }

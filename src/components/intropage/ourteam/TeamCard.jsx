@@ -1,7 +1,6 @@
 import React from 'react';
 
 function TeamCard({ data }) {
-  console.log(data);
   return (
     <div className="ourteam-item row">
       <div className="img col-lg-4">
