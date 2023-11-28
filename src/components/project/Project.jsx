@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './project.css';
 import { useParams } from 'react-router-dom';
 import portfolios from '../data/portfolio_list.js';
@@ -8,6 +8,12 @@ import services from '../data/services_list.js';
 import BtnOutlineXl from '../utils/btn/BtnOutlineXL.jsx';
 
 function Project() {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+    console.log(loading);
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBlogElement = document.querySelectorAll('.navportfolio');
@@ -34,7 +40,20 @@ function Project() {
         />
         <div className="phones">
           {project.cover.map((item, index) => (
-            <img key={index} src={require('../../images/portfolio/page/' + item)} alt="" />
+            <>
+              {loading && (
+                <div className="img">
+                  <span className="spinner-border text-info m-5" role="status"></span>
+                </div>
+              )}
+              <img
+                onLoad={handleImageLoad}
+                key={index}
+                src={require('../../images/portfolio/page/' + item)}
+                alt=""
+                style={{ display: loading ? 'none' : 'block' }}
+              />
+            </>
           ))}
         </div>
       </div>

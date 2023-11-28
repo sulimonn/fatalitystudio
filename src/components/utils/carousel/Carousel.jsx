@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './carousel.css';
 
 function Carousel({ data, id, bg }) {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
   return (
     <div id={'carousel' + id} className="carousel slide">
       <div className="carousel-indicators">
@@ -27,7 +32,16 @@ function Carousel({ data, id, bg }) {
             <div className="carousel-item-body">
               {item.map((sub, i) => (
                 <div key={i} className={'carousel-phone ' + (item.length === 0 && 'single-phone')}>
-                  <img src={require('../../../images/portfolio/page/' + sub.src)} alt="" />
+                  {loading && (
+                    <div className="img">
+                      <span className="spinner-border text-info m-5" role="status"></span>
+                    </div>
+                  )}
+                  <img
+                    onLoad={handleImageLoad}
+                    src={require('../../../images/portfolio/page/' + sub.src)}
+                    alt=""
+                  />
                   <p className="t">{sub.text}</p>
                 </div>
               ))}

@@ -13,7 +13,7 @@ function MainArticle({ data }) {
       <div className="main-article__img">
         {loading && (
           <div className="img">
-            <span className="spinner-border m-5" role="status"></span>
+            <span className="spinner-border text-info m-5" role="status"></span>
           </div>
         )}
         <img
