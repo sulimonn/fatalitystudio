@@ -6,6 +6,7 @@ import IntroPage from './components/intropage/Intropage';
 // import Particles from 'react-particles';
 // import { loadSlim } from 'tsparticles-slim';
 import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
 
 function App() {
   // const particlesInit = useCallback(async (engine) => {
@@ -23,7 +24,7 @@ function App() {
           </Routes>
         </div>
         {shouldDisplayHeader && <Contact />}
-        {shouldDisplayHeader && <footer>footer</footer>}
+        {shouldDisplayHeader && <Footer />}
         {/* <Particles
           id="particles"
           init={particlesInit}

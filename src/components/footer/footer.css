@@ -1,0 +1,148 @@
+.footer {
+  background-color: var(--color-black);
+  border-top: 2px solid var(--color-gray);
+  z-index: 2;
+  position: relative;
+}
+.footer .footer-container {
+  padding: 60px 0;
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+.footer .side {
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 100%;
+}
+
+.footer-company {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer-company .copyright {
+  color: var(--color-gray);
+}
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+}
+.footer-contacts-item {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px 0;
+  color: var(--color-white);
+  text-decoration: none;
+}
+.footer-contents {
+  display: flex;
+  width: min-content;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.footer-contents .content-item {
+  color: white;
+  text-decoration: none;
+  font-family: 'Exo 2';
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+}
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-icon {
+  width: 36px;
+}
+.footer-icon svg {
+  width: 100%;
+}
+
+.footer-icon:hover svg {
+  fill: rgb(249, 163, 14);
+}
+.footer-conf {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  width: auto;
+}
+.footer-conf-item {
+  color: gray;
+  text-decoration: none;
+}
+
+.footer-conf-item:hover,
+.footer-contents .content-item:hover {
+  color: var(--color-ylw);
+}
+
+@media screen and (max-width: 760px) {
+  .footer .footer-container {
+    position: relative;
+    z-index: 1;
+    grid-template-columns: 1fr;
+    padding: 10px 10px 60px 10px;
+  }
+  .footer-container .side:last-child {
+    border-top: 1px solid #fff;
+  }
+  .footer-container .side {
+    flex-direction: column-reverse;
+  }
+
+  .footer-container .footer-company {
+    position: relative;
+    top: 120px;
+  }
+  .footer-company:not(.footer-social) {
+    margin-bottom: 50px;
+    top: 135px;
+  }
+  .footer-contact h2 {
+    position: relative;
+    z-index: -1;
+    padding-top: 40px;
+  }
+  .footer-icons {
+    padding: 40px 0;
+    position: relative;
+    top: -230px;
+    column-gap: 20px;
+    justify-content: start;
+  }
+  .copyright {
+    position: absolute;
+    top: 230px;
+    right: 0;
+  }
+  .footer-contents {
+    position: relative;
+    top: -50px;
+    z-index: 5;
+    display: flex;
+    width: min-content;
+  }
+  .footer-contents .content-item {
+    display: flex;
+  }
+  .footer-conf {
+    position: relative;
+    top: -50px;
+    text-align: right;
+  }
+  .footer-conf-item {
+    display: flex;
+    margin-left: auto;
+  }
+}

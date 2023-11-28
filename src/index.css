@@ -103,10 +103,46 @@ footer {
 #root,
 .App,
 body {
+  z-index: 0;
   position: relative;
   top: 0;
   bottom: 0;
   height: 100%;
+  overflow: hidden;
+}
+.App::after,
+.App::before {
+  content: '';
+  position: absolute;
+  height: 75vw;
+  width: 75vw;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 1480px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(8, 255, 252, 0.32) 0%,
+    rgba(8, 211, 255, 0.32) 0.01%,
+    rgba(8, 255, 252, 0) 100%
+  );
+}
+.App::before {
+  top: 300px;
+}
+.App::after {
+  bottom: 0;
+}
+@media screen and (max-width: 500px) {
+  .App::after,
+  .App::before {
+    width: 100vw;
+    height: 100vw;
+  }
+  .App::after {
+    bottom: 340vw;
+  }
 }
 #particles {
   top: 200px;

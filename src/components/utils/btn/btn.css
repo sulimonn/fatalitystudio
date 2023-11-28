@@ -81,10 +81,10 @@
     border-width: 1px;
   }
   .btn1 {
-    font-size: var(--fs-mb-btn1);
+    font-size: var(--fs-mb-btn1) !important;
   }
   .btn2 {
-    font-size: var(--fs-mb-btn2);
+    font-size: var(--fs-mb-btn2) !important;
   }
   .btn-simple svg {
     height: 10px;

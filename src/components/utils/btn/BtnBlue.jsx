@@ -1,8 +1,8 @@
 import ArrowSvg from './Arrow';
 import './btn.css';
-function BtnBlue({ children }) {
+function BtnBlue({ children, onClick = null, type = 'button' }) {
   return (
-    <button className="btn1 btn-blue">
+    <button type={type} onClick={onClick} className="btn1 btn-blue">
       {children}
       <ArrowSvg />
     </button>

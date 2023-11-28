@@ -61,6 +61,9 @@
 .portfolio-card-img-svg .website {
   transition: all 1s linear;
 }
+.portfolio-card-img {
+  cursor: pointer !important;
+}
 .group .portfolio-card-img {
   width: 100%;
   position: relative;
@@ -68,6 +71,7 @@
 }
 
 .portfolio-card-img-svg {
+  cursor: pointer !important;
   z-index: 0;
   position: absolute;
   left: 0;
@@ -77,9 +81,11 @@
   transition: all 1s ease-in-out;
 }
 .group .portfolio-card-img-svg img {
+  cursor: pointer !important;
   height: 100%;
 }
 .group .portfolio-card-img-phone {
+  cursor: pointer !important;
   position: relative;
   bottom: 0;
   height: 100%;
@@ -90,6 +96,7 @@
 }
 
 .group .portfolio-card-img-phone .bg {
+  cursor: pointer !important;
   position: absolute;
   z-index: 1;
   height: 100%;
@@ -97,6 +104,7 @@
   padding: 45px;
 }
 .group .portfolio-card-img-phone .bg.app {
+  cursor: pointer !important;
   padding: 55px;
   right: 20%;
 }
@@ -104,6 +112,7 @@
   right: 35%;
 }
 .group .portfolio-card-img-phone .phone {
+  cursor: pointer !important;
   position: relative;
   z-index: 5;
   width: auto;
@@ -161,6 +170,7 @@
 /*----------------------------------------------*/
 
 .single .portfolio-card-img-phone {
+  cursor: pointer !important;
   position: relative;
   display: flex;
   object-fit: unset;
@@ -170,6 +180,7 @@
   z-index: 2;
 }
 .single .portfolio-card-img-phone .phone {
+  cursor: pointer !important;
   position: relative;
   z-index: 2;
   margin-left: auto;
@@ -182,6 +193,7 @@
 }
 
 .single .portfolio-card-img-phone .bg {
+  cursor: pointer !important;
   position: absolute;
   padding: 40px;
   height: 100%;
@@ -190,6 +202,7 @@
 }
 
 .single .portfolio-card-img-svg {
+  cursor: pointer !important;
   height: 100%;
   top: 10px;
   right: 20em;
@@ -199,6 +212,7 @@
   align-items: center;
 }
 .single .portfolio-card-img-svg img {
+  cursor: pointer !important;
   height: 80%;
   width: auto;
 }
