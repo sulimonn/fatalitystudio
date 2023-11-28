@@ -8,7 +8,7 @@ function Article({ data }) {
     setLoading(false);
   };
   return (
-    <div className="article">
+    <section className="article">
       <div className="main-article__img">
         {loading && (
           <div className="img">
@@ -31,7 +31,7 @@ function Article({ data }) {
           <BtnSimple link={'/blog/' + data.id}>Читать статью</BtnSimple>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

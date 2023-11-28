@@ -25,6 +25,8 @@
   transform: scale(1.1, 1.1);
 }
 .ourteam-item .info {
+  display: flex;
+  flex-direction: column;
   padding-left: 5%;
 }
 .ourteam-item h6 {

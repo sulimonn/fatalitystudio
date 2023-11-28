@@ -9,7 +9,8 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import FeedbackPage from './components/feedbackPage/FeedbackPage';
 import Blog from './components/blogPage/Blog';
-import PorrtfoliosPage from './components/portfoliosPage/PortfoliosPage';
+import PorrtfoliosPage from './components/portfolioPage/PortfoliosPage';
+import Article from './components/articlePage/Article';
 
 function App() {
   // const particlesInit = useCallback(async (engine) => {
@@ -25,7 +26,10 @@ function App() {
           <Routes>
             <Route path="/" element={<IntroPage />}></Route>
             <Route path="/feedback" element={<FeedbackPage />}></Route>
-            <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/blog">
+              <Route index element={<Blog />} />
+              <Route path=":id" element={<Article />}></Route>
+            </Route>
             <Route path="/portfolio" element={<PorrtfoliosPage />}></Route>
           </Routes>
         </div>

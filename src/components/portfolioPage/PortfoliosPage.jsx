@@ -16,7 +16,7 @@ function PorrtfoliosPage() {
   }, []);
 
   return (
-    <div className="portfolios_page pt-5">
+    <section className="portfolios_page pt-5">
       <h2 className="headline2">Портфолио</h2>
       <div className="portfolios_container">
         <div className="portfolio-cards">
@@ -33,7 +33,7 @@ function PorrtfoliosPage() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
