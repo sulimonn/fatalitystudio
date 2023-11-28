@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BtnSimple from '../utils/btn/BtnSimple';
 
 function Article({ data }) {
