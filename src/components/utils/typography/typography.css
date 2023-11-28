@@ -11,7 +11,6 @@
   font-size: var(--fs-dt-h2);
   font-weight: 400;
   line-height: normal;
-  text-align: center;
 }
 
 .headline3 {
@@ -68,12 +67,12 @@
   color: unset;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
   .headline1 {
     font-size: var(--fs-mb-h3);
   }
-  .headline3 {
-    font-size: var(--fs-mb-h3);
+  .headline2 {
+    font-size: var(--fs-mb-h2);
   }
   .headline3 {
     font-size: var(--fs-mb-h3);

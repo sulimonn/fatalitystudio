@@ -1,8 +1,6 @@
 .footer {
   background-color: var(--color-black);
   border-top: 2px solid var(--color-gray);
-  z-index: 2;
-  position: relative;
 }
 .footer .footer-container {
   padding: 60px 0;
@@ -36,11 +34,18 @@
   background-color: transparent;
   padding: 0;
   border: none;
-  cursor: pointer;
   flex: 1;
   margin: 10px 0;
+  cursor: pointer;
+}
+
+.footer-contacts-item a {
+  cursor: pointer;
   color: var(--color-white);
   text-decoration: none;
+}
+.footer-contacts-item a:hover {
+  color: var(--color-grey);
 }
 .footer-contents {
   display: flex;

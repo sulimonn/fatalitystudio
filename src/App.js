@@ -7,6 +7,7 @@ import IntroPage from './components/intropage/Intropage';
 // import { loadSlim } from 'tsparticles-slim';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import FeedbackPage from './components/feedbackPage/FeedbackPage';
 
 function App() {
   // const particlesInit = useCallback(async (engine) => {
@@ -21,6 +22,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<IntroPage />}></Route>
+            <Route path="/feedback" element={<FeedbackPage />}></Route>
           </Routes>
         </div>
         {shouldDisplayHeader && <Contact />}

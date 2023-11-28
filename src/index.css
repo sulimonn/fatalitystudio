@@ -92,11 +92,13 @@ div {
 .header {
   z-index: 3;
 }
-section {
+section,
+.contact {
   position: relative;
   z-index: 2;
 }
-footer {
+
+.footer {
   position: relative;
   z-index: 1;
 }
@@ -108,6 +110,8 @@ body {
   top: 0;
   bottom: 0;
   height: 100%;
+}
+.App {
   overflow: hidden;
 }
 .App::after,

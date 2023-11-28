@@ -73,21 +73,19 @@ function Footer() {
           <div className="footer-contact">
             <h2 className="headline3">Контакты</h2>
             <div className="footer-contacts">
-              <div className="footer-contacts-item dsc1" onClick={handleMapClick}>
+              <div className="footer-contacts-item paragraph" onClick={handleMapClick}>
                 г. Москва, ул. Сельская, 14
               </div>
-              <input
-                className="footer-contacts-item dsc1"
-                value="8 (800) 800-80-80"
-                readOnly
-                type="tel"
-              />
-              <input
-                className="footer-contacts-item dsc1"
-                value="office@mail.ru"
-                readOnly
-                type="email"
-              />
+              <div className="footer-contacts-item">
+                <a className="paragraph" href="tel:8(800)800-80-80">
+                  8 (800) 800-80-80
+                </a>
+              </div>
+              <div className="footer-contacts-item">
+                <a className="paragraph" href="mailto:office@mail.ru">
+                  office@mail.ru
+                </a>
+              </div>
             </div>
           </div>
         </div>
