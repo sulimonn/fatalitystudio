@@ -43,7 +43,7 @@ function Project() {
             <>
               {loading && (
                 <div className="img">
-                  <span className="spinner-border text-info m-5" role="status"></span>
+                  <span className="spinner-border text-warning m-5" role="status"></span>
                 </div>
               )}
               <img

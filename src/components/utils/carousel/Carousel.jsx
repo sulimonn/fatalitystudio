@@ -34,7 +34,7 @@ function Carousel({ data, id, bg }) {
                 <div key={i} className={'carousel-phone ' + (item.length === 0 && 'single-phone')}>
                   {loading && (
                     <div className="img">
-                      <span className="spinner-border text-info m-5" role="status"></span>
+                      <span className="spinner-border text-warning m-5" role="status"></span>
                     </div>
                   )}
                   <img

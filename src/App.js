@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import './components/utils/typography/typography.css';
 import IntroPage from './components/intropage/Intropage';
-// import Particles from 'react-particles';
-// import { loadSlim } from 'tsparticles-slim';
+import Particles from 'react-particles';
+import { loadSlim } from 'tsparticles-slim';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import FeedbackPage from './components/feedbackPage/FeedbackPage';
@@ -15,9 +15,9 @@ import Project from './components/project/Project';
 import ServicePage from './components/servicePage/ServicePage';
 
 function App() {
-  // const particlesInit = useCallback(async (engine) => {
-  //   await loadSlim(engine);
-  // }, []);
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
   const shouldDisplayHeader = !window.location.pathname.startsWith('/admin');
 
   return (
@@ -41,7 +41,7 @@ function App() {
         </div>
         {shouldDisplayHeader && <Contact />}
         {shouldDisplayHeader && <Footer />}
-        {/* <Particles
+        <Particles
           id="particles"
           init={particlesInit}
           options={{
@@ -51,6 +51,7 @@ function App() {
                 value: 'transparent',
               },
             },
+            fpsLimit: 20,
             interactivity: {
               events: {
                 onClick: {
@@ -104,7 +105,7 @@ function App() {
             },
             detectRetina: true,
           }}
-        /> */}
+        />
       </div>
     </BrowserRouter>
   );

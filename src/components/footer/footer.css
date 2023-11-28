@@ -37,6 +37,7 @@
   flex: 1;
   margin: 10px 0;
   cursor: pointer;
+  color: var(--color-white) !important;
 }
 
 .footer-contacts-item a {
