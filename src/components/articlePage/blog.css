@@ -72,13 +72,14 @@
 
 @media screen and (max-width: 850px) {
   .blog_article {
-    padding-top: 0;
+    padding-top: 20px;
   }
   .blog_article_img {
-    height: 180px;
+    height: 240px;
     border-radius: 20px;
   }
   .content_heading {
+    padding-top: 40px;
     display: flex;
     flex-direction: column-reverse;
   }

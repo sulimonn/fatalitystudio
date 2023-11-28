@@ -15,8 +15,11 @@
   text-align: center;
   color: var(--color-white);
 }
-.intro h1 .yellow {
+.yellow {
   color: var(--color-ylw);
+}
+.white {
+  color: var(--color-white);
 }
 .intro .order-project {
   text-align: left;

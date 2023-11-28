@@ -11,6 +11,7 @@ import FeedbackPage from './components/feedbackPage/FeedbackPage';
 import Blog from './components/blogPage/Blog';
 import PorrtfoliosPage from './components/portfolioPage/PortfoliosPage';
 import Article from './components/articlePage/Article';
+import Project from './components/project/Project';
 
 function App() {
   // const particlesInit = useCallback(async (engine) => {
@@ -30,7 +31,10 @@ function App() {
               <Route index element={<Blog />} />
               <Route path=":id" element={<Article />}></Route>
             </Route>
-            <Route path="/portfolio" element={<PorrtfoliosPage />}></Route>
+            <Route path="/portfolio">
+              <Route index element={<PorrtfoliosPage />} />
+              <Route path=":id" element={<Project />} />
+            </Route>
           </Routes>
         </div>
         {shouldDisplayHeader && <Contact />}

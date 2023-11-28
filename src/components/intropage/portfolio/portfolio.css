@@ -157,6 +157,9 @@
 .single.portfolio-card:hover .portfolio-card-img-svg .service {
   transform: translateX(-220%);
 }
+.single.portfolio-card:hover .portfolio-card-img-svg .website {
+  transform: translateX(20%);
+}
 .single.portfolio-card:hover .portfolio-card-img-phone .phone {
   transform: translateX(-7em) scale(1, 1);
 }
