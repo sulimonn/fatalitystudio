@@ -13,7 +13,8 @@
 }
 
 .main-article__img,
-.main-article__img .img {
+.main-article__img .img,
+.main-article__img img {
   width: 100%;
 }
 
