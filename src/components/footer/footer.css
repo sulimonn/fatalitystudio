@@ -96,7 +96,7 @@
     position: relative;
     z-index: 1;
     grid-template-columns: 1fr;
-    padding: 10px 10px 60px 10px;
+    padding: 10px 10px 80px 10px;
   }
   .footer-container .side:last-child {
     border-top: 1px solid var(--color-gray);

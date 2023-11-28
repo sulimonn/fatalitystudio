@@ -70,7 +70,7 @@ function App() {
               },
               links: {
                 color: '#ffffff',
-                distance: 150,
+                distance: 140,
                 enable: true,
                 opacity: 0.5,
                 width: 1,
@@ -88,12 +88,12 @@ function App() {
               number: {
                 density: {
                   enable: true,
-                  area: 800,
+                  area: 900,
                 },
-                value: 70,
+                value: 60,
               },
               opacity: {
-                value: 0.5,
+                value: 0.3,
               },
               shape: {
                 type: 'circle',
