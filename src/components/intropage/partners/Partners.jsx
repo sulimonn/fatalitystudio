@@ -3,8 +3,8 @@ import './partners.css';
 
 function Partners() {
   return (
-    <div className="content">
-      <div>
+    <div className="content partners">
+      <div className="left-side">
         <h3 className="headline3">Наши партнеры</h3>
       </div>
       <div className="partners-list">

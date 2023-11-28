@@ -233,7 +233,7 @@
   .group.portfolio-card:hover .portfolio-card-img-svg .service {
     transform: translateX(-200%);
   }
-  .content {
+  #intro .content {
     display: block;
   }
   .heading h1 {

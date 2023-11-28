@@ -9,9 +9,6 @@
 }
 
 @media screen and (max-width: 760px) {
-  .partner-title .services-title {
-    padding: 0;
-  }
   .partners-list {
     flex-direction: column;
     align-items: center;
@@ -27,8 +24,12 @@
   .partner svg {
     width: 100%;
   }
-  .partner-title {
-    text-align: center;
-    padding-bottom: 20px;
+  .partners .left-side {
+    display: flex !important;
+    justify-content: center !important;
+    padding-bottom: 30px;
+  }
+  .partners .headline3 {
+    width: auto !important;
   }
 }
