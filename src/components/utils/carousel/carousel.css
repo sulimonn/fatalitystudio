@@ -90,6 +90,9 @@
   .carousel-inner {
     border-radius: 17px;
     height: 300px;
+    width: 100%;
+  }
+  .carousel-item-body {
     padding: 0 10%;
   }
   .carousel-phone {
