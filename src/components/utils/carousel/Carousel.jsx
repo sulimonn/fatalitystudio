@@ -25,7 +25,7 @@ function Carousel({ data, id, bg }) {
       <div className={'carousel-inner'} style={{ background: bg }}>
         {data.map((item, index) => (
           <div
-            data-bs-interval="60000"
+            data-bs-interval="6000"
             key={index}
             className={'carousel-item ' + (index === 0 && 'active')}
           >
