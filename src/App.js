@@ -1,15 +1,16 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import './components/utils/typography/typography.css';
 import IntroPage from './components/intropage/Intropage';
-import Particles from 'react-particles';
-import { loadSlim } from 'tsparticles-slim';
+// import Particles from 'react-particles';
+// import { loadSlim } from 'tsparticles-slim';
+import Contact from './components/contact/Contact';
 
 function App() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //   await loadSlim(engine);
+  // }, []);
   const shouldDisplayHeader = !window.location.pathname.startsWith('/admin');
 
   return (
@@ -21,8 +22,9 @@ function App() {
             <Route path="/" element={<IntroPage />}></Route>
           </Routes>
         </div>
+        {shouldDisplayHeader && <Contact />}
         {shouldDisplayHeader && <footer>footer</footer>}
-        <Particles
+        {/* <Particles
           id="particles"
           init={particlesInit}
           options={{
@@ -47,6 +49,7 @@ function App() {
             particles: {
               color: {
                 value: '#ffffff',
+                opacity: 0.1,
               },
               links: {
                 color: '#ffffff',
@@ -62,7 +65,7 @@ function App() {
                   default: 'bounce',
                 },
                 random: false,
-                speed: 2,
+                speed: 1,
                 straight: false,
               },
               number: {
@@ -84,7 +87,7 @@ function App() {
             },
             detectRetina: true,
           }}
-        />
+        /> */}
       </div>
     </BrowserRouter>
   );

@@ -37,7 +37,7 @@
   background: var(--color-blue);
   border: none;
   border-radius: 45px;
-  padding: 15.7px 30px 19px 30px;
+  padding: 11.7px 30px 13px 30px;
   transition: all 0.2s ease-in-out;
 }
 .btn-blue svg {
@@ -48,7 +48,7 @@
   width: auto;
 }
 .btn-blue:hover {
-  background: #08fffc;
+  background: var(--color-lght-blue);
 }
 
 .btn-simple {

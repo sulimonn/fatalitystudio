@@ -42,6 +42,7 @@ code {
   --color-gray: #a9a9a9;
   --color-drk-gray: #242424;
   --color-blue: #08fffc99;
+  --color-lght-blue: #08fffbd7;
 
   --fs-dt-h1: calc(100vw / 7);
   --fs-dt-h2: 160px;
@@ -111,6 +112,7 @@ body {
   top: 200px;
   bottom: 0;
   height: 100%;
+  width: 100%;
   position: absolute;
   overflow: visible;
   z-index: 0;
