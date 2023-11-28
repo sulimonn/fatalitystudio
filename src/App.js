@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import './components/utils/typography/typography.css';
 import IntroPage from './components/intropage/Intropage';
+import Particles from 'react-particles';
+
 function App() {
   const shouldDisplayHeader = !window.location.pathname.startsWith('/admin');
 
@@ -10,10 +12,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {shouldDisplayHeader && <Header />}
-        <Routes>
-          <Route path="/" element={<IntroPage />}></Route>
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<IntroPage />}></Route>
+          </Routes>
+        </div>
         {shouldDisplayHeader && <footer>footer</footer>}
+        <Particles />
       </div>
     </BrowserRouter>
   );

@@ -99,3 +99,20 @@ footer {
   position: relative;
   z-index: 1;
 }
+#root,
+.App,
+body {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+#tsparticles {
+  top: 200px;
+  bottom: 0;
+  position: absolute;
+  overflow: visible;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}

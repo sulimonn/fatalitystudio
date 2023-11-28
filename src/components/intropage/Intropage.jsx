@@ -6,7 +6,7 @@ import Services from './services/Services';
 
 function IntroPage() {
   return (
-    <section className="container">
+    <section>
       <Intro></Intro>
       <Services />
       <Portfolio />
