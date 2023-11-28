@@ -56,10 +56,12 @@
   color: var(--color-white);
   padding: 20px 0 0 0;
 }
+.paragraph {
+  color: var(--color-gray);
+}
 
 .sub_text .paragraph {
   margin: 20px 0;
-  color: var(--color-gray);
   text-align: left;
 }
 .blog_article .quote {

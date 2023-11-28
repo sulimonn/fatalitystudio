@@ -88,7 +88,7 @@ function Project() {
             надежность и высокую производительность для удовлетворения ваших потребностей.
           </p>
           <div className="btn">
-            <BtnOutlineXl link={'/service/' + service.id}>Подробнее об услуге</BtnOutlineXl>
+            <BtnOutlineXl link={'/services/' + service.id}>Подробнее об услуге</BtnOutlineXl>
           </div>
         </div>
       </div>
