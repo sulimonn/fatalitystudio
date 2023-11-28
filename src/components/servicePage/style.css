@@ -46,9 +46,11 @@
   justify-content: space-between;
   align-items: center;
 }
-.develope_steps .dsc1,
+.develope_steps .headline4,
 .develope_steps .paragraph {
   width: 40% !important;
+  align-self: center;
+  padding-bottom: 0 !important;
 }
 
 .develope_steps .paragraph {
@@ -111,7 +113,7 @@
   .step-text .step-title {
     padding: 0 0 7px 0;
   }
-  .develope_steps .dsc1,
+  .develope_steps .headline4,
   .develope_steps .paragraph {
     width: 100% !important;
   }

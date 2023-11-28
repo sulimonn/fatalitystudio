@@ -11,7 +11,7 @@ function IntroPage() {
     item.classList.remove('active-link');
   });
   return (
-    <section>
+    <section id="intro">
       <Intro></Intro>
       <Services />
       <Portfolio />
