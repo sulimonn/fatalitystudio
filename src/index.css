@@ -152,7 +152,7 @@ body {
     bottom: 340vw;
   }
 }
-#particles {
+#particles-js {
   top: 200px;
   right: 0;
   left: 0;
@@ -164,7 +164,7 @@ body {
   z-index: 0;
 }
 
-#particles canvas {
+#particles-js canvas {
   height: 100%;
   width: 100%;
 }
