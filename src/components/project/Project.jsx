@@ -100,7 +100,7 @@ function Project() {
         <div className="left-side"></div>
         <div className="right-side">
           <h3 className="pt-0 headline3">
-            <span className="yellow">разработка приложений</span>
+            <span className="yellow">{service.title}</span>
           </h3>
           <p className="paragraph py-2">
             Специализируемся на создании пользовательских мобильных приложений, обеспечивая
