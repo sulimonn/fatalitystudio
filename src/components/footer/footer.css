@@ -99,6 +99,7 @@
     padding: 10px 10px 80px 10px;
   }
   .footer-container .side:last-child {
+    padding-bottom: 30x;
     border-top: 1px solid var(--color-gray);
   }
   .footer-container .side {
@@ -148,5 +149,10 @@
   .footer-conf-item {
     display: flex;
     margin-left: auto;
+  }
+}
+@media screen and (max-width: 760px) {
+  .footer .footer-container {
+    padding-bottom: 40px !important;
   }
 }
