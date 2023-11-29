@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import './header.css';
 import BtnOutline from '../utils/btn/Button1';
 import { useEffect } from 'react';
@@ -137,18 +138,32 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="#contact"
-                    onClick={scrollToContact}
+                  <ScrollLink
+                    to="contact"
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={1200}
+                    onClick={hideCollapse}
                     className="nav-link"
-                    id="navcontacts"
                   >
                     Контакты
-                  </Link>
+                  </ScrollLink>
                 </li>
               </ul>
               <div className="text-end">
-                <BtnOutline onClick={scrollToContact}>Заказать проект</BtnOutline>
+                <ScrollLink
+                  to="contact"
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={1200}
+                  onClick={hideCollapse}
+                >
+                  <BtnOutline>Заказать проект</BtnOutline>
+                </ScrollLink>
               </div>
             </div>
           </div>
@@ -172,28 +187,32 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="#contact"
-                  onClick={() => {
-                    scrollToContact();
-                    hideCollapse();
-                  }}
+                <ScrollLink
+                  to="contact"
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={1200}
+                  onClick={hideCollapse}
                   className="nav-link"
                 >
                   Контакты
-                </Link>
+                </ScrollLink>
               </li>
             </ul>
             <div className="text-end">
-              <Link
-                to="#contact"
-                onClick={() => {
-                  scrollToContact();
-                  hideCollapse();
-                }}
+              <ScrollLink
+                to="contact"
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={1200}
+                onClick={hideCollapse}
               >
                 <BtnOutline>Заказать проект</BtnOutline>
-              </Link>
+              </ScrollLink>
             </div>
           </div>
         </div>

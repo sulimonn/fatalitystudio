@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './intro.css';
 import Laptop from '../../../images/laptop.png';
 import BtnBlue from '../../utils/btn/BtnBlue';
+import { Link as ScrollLink } from 'react-scroll';
 
 function Intro() {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,16 @@ function Intro() {
           />
         </div>
         <div className="intro__btn">
-          <BtnBlue>Заказать проект</BtnBlue>
+          <ScrollLink
+            to="contact"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={1200}
+          >
+            <BtnBlue>Заказать проект</BtnBlue>
+          </ScrollLink>
         </div>
       </div>
     </div>
