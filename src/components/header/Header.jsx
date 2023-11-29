@@ -12,16 +12,6 @@ function Header() {
       if (btn) btn.click();
     }
   };
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
   useEffect(() => {
     const handleResize = () => {
       const nav = document.getElementById('navbarResponsive');
