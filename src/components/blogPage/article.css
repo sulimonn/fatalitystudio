@@ -17,7 +17,7 @@
 .main-article__img img {
   width: 100%;
 }
-
+.img,
 .main-article__img .img {
   height: 100%;
   display: flex;

@@ -132,7 +132,7 @@ function Header() {
                     to="contact"
                     activeClass="active"
                     spy={true}
-                    smooth={true}
+                    smooth={false}
                     offset={50}
                     duration={1200}
                     onClick={hideCollapse}
@@ -147,7 +147,7 @@ function Header() {
                   to="contact"
                   activeClass="active"
                   spy={true}
-                  smooth={true}
+                  smooth={false}
                   offset={50}
                   duration={1200}
                   onClick={hideCollapse}
@@ -181,7 +181,7 @@ function Header() {
                   to="contact"
                   activeClass="active"
                   spy={true}
-                  smooth={true}
+                  smooth={false}
                   offset={50}
                   duration={1200}
                   onClick={hideCollapse}
@@ -196,7 +196,7 @@ function Header() {
                 to="contact"
                 activeClass="active"
                 spy={true}
-                smooth={true}
+                smooth={false}
                 offset={50}
                 duration={1200}
                 onClick={hideCollapse}

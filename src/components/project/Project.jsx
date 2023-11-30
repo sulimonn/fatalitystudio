@@ -42,7 +42,7 @@ function Project() {
           {project.cover.map((item, index) => (
             <>
               {loading && (
-                <div className="img">
+                <div className="img px-5">
                   <span className="spinner-border text-warning m-5" role="status"></span>
                 </div>
               )}

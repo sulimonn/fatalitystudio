@@ -33,7 +33,7 @@ function Carousel({ data, id, bg }) {
               {item.map((sub, i) => (
                 <div key={i} className={'carousel-phone ' + (item.length === 0 && 'single-phone')}>
                   {loading && (
-                    <div className="img">
+                    <div className="img  px-5">
                       <span className="spinner-border text-warning m-5" role="status"></span>
                     </div>
                   )}
@@ -41,6 +41,7 @@ function Carousel({ data, id, bg }) {
                     onLoad={handleImageLoad}
                     src={require('../../../images/portfolio/page/' + sub.src)}
                     alt=""
+                    style={{ display: loading ? 'none' : 'block' }}
                   />
                   <p className="t">{sub.text}</p>
                 </div>

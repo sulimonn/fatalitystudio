@@ -23,6 +23,7 @@ function ParticlesComponent() {
         },
         move: {
           speed: 3,
+          out_mode: 'bounce',
         },
         line_linked: {
           opacity: 0.5,

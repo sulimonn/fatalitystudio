@@ -36,10 +36,10 @@ function Intro() {
           <ScrollLink
             to="contact"
             activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={1200}
+            spy={false}
+            smooth={false}
+            offset={0}
+            duration={500}
           >
             <BtnBlue>Заказать проект</BtnBlue>
           </ScrollLink>
