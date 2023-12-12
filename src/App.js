@@ -23,11 +23,11 @@ function App() {
           <Routes>
             <Route path="/" element={<IntroPage />}></Route>
             <Route path="/feedback" element={<FeedbackPage />}></Route>
-            <Route path="/blog">
+            <Route path="/blog/*">
               <Route index element={<Blog />} />
               <Route path=":id" element={<Article />}></Route>
             </Route>
-            <Route path="/portfolio">
+            <Route path="/portfolio/*">
               <Route index element={<PorrtfoliosPage />} />
               <Route path=":id" element={<Project />} />
             </Route>
