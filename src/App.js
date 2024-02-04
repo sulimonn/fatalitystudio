@@ -12,6 +12,7 @@ import Project from './components/project/Project';
 import ServicePage from './components/servicePage/ServicePage';
 import ParticlesComponent from './components/PartclesComponent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Header from './components/header/Header';
 
 function App() {
   const defaultTheme = createTheme({
@@ -43,6 +44,7 @@ function App() {
     <BrowserRouter basename="/">
       <div className="App">
         <ThemeProvider theme={defaultTheme}>
+          <Header />
           <div className="container">
             <Routes>
               <Route path="/" element={<IntroPage />}></Route>
