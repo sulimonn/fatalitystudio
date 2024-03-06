@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './contact.css';
-import services from '../data/services_list.js';
-import BtnBlue from '../utils/btn/BtnBlue.jsx';
+import BtnBlue from 'components/utils/btn/BtnBlue.jsx';
+import { useAddTaskMutation, useGetServicesQuery } from 'store/reducers/serviceApi';
 
 function Contact() {
+  const { data: services = [] } = useGetServicesQuery();
+  const [addTask] = useAddTaskMutation();
+  const [task, setTask] = useState({});
   const [selectedOption, setSelectedOption] = useState('Интересующая услуга');
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [unsetOption, setUnsetOpt] = useState(selectedOption);
   const handleSelectChange = (option) => {
     setSelectedOption(option);
+    setTask({ ...task, service_id: option.id });
     setDropdownOpen(false);
     setUnsetOpt(selectedOption);
   };
@@ -19,6 +23,18 @@ function Contact() {
 
   const handleMouseLeave = () => {
     setSelectedOption(unsetOption);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    task.service_id = selectedOption.id;
+    if (!task.service_id) {
+      alert('Укажите интересующую услугу');
+      return;
+    }
+    const response = await addTask(task);
+    console.log(response);
+    setTask({});
   };
 
   return (
@@ -131,13 +147,17 @@ function Contact() {
             </svg>
           </div>
         </div>
-        <form action="" className="contact-form">
+        <form action="" className="contact-form" onSubmit={handleSubmit}>
           <input
             placeholder="Ваше имя"
             className="form-item"
             type="text"
             name="name"
             id="name"
+            value={task?.name || ''}
+            onChange={(e) => {
+              setTask({ ...task, name: e.target.value });
+            }}
             required
           />
           <input
@@ -146,9 +166,12 @@ function Contact() {
             type="tel"
             name="phone"
             id="phone"
+            value={task?.phone_number || ''}
+            onChange={(e) => {
+              setTask({ ...task, phone_number: e.target.value });
+            }}
             required
           />
-          <input type="text" name="service" readOnly value={selectedOption.id} hidden />
           <div className="custom-dropdown" onClick={() => setDropdownOpen(!isDropdownOpen)}>
             <div
               className={`dropdown-arrow ${isDropdownOpen ? 'rotate-arrow' : 'unset-arrow'}`}
@@ -156,7 +179,7 @@ function Contact() {
             <div className={`selected-option ${isDropdownOpen ? 'open' : ''}`}>
               {selectedOption.title || 'Интересующая услуга'}
             </div>
-
+            <input type="hidden" name="service_id" value={selectedOption.id || ''} required />
             <ul
               onMouseLeave={() => handleMouseLeave()}
               className={`options-list`}
@@ -179,9 +202,7 @@ function Contact() {
               конфиденциальности сайта
             </p>
           </div>
-          <BtnBlue type="submit" onClick={(e) => e.preventDefault()}>
-            Обсудить проект
-          </BtnBlue>
+          <BtnBlue type="submit">Обсудить проект</BtnBlue>
         </form>
       </div>
     </div>

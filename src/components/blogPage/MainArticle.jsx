@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BtnOutline from '../utils/btn/Button1';
+import BtnOutline from 'components/utils/btn/Button1';
+import formatDate from 'components/utils/date/formatDate';
 
-function MainArticle({ data }) {
+function MainArticle({ article }) {
+  console.log(article);
   const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -19,17 +21,17 @@ function MainArticle({ data }) {
         <img
           className="img"
           onLoad={handleImageLoad}
-          src={require(`../../images/blog/${data.src}`)}
-          alt="apicture"
+          src={article?.cover}
+          alt="cover"
           style={{ display: loading ? 'none' : 'block' }}
         />
       </div>
       <div className="main-article__info">
-        <p className="date dsc1">{data.date}</p>
-        <h2 className="headline3">{data.head.heading}</h2>
-        <p className="headline4">{data.text}</p>
+        <p className="date dsc1">{formatDate(article.created_at)}</p>
+        <h2 className="headline3">{article.title}</h2>
+        <p className="headline4">{article.introduction}</p>
         <div>
-          <Link to={'/blog/' + data.id}>
+          <Link to={'/blog/' + article.id}>
             <BtnOutline>Читать статью</BtnOutline>
           </Link>
         </div>

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import './header.css';
-import BtnOutline from '../utils/btn/Button1';
-import { useEffect } from 'react';
+import BtnOutline from 'components/utils/btn/Button1';
 
 function Header() {
   const hideCollapse = (e) => {

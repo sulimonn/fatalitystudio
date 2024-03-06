@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './intro.css';
-import Laptop from '../../../images/laptop.png';
-import BtnBlue from '../../utils/btn/BtnBlue';
+import Laptop from 'images/laptop.png';
+import BtnBlue from 'components/utils/btn/BtnBlue';
 import { Link as ScrollLink } from 'react-scroll';
 
 function Intro() {

@@ -125,6 +125,7 @@ header .container .nav li {
 }
 @media screen and (max-width: 430px) {
   header .container {
+    padding: 0 !important;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

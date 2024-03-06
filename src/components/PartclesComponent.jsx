@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'particles.js';
 
 function ParticlesComponent() {
+  const [screenSize, setScreenSize] = useState({
+    width: window.innerWidth,
+    height: document.body.scrollHeight,
+  });
+
   useEffect(() => {
     const particlesJS = window.particlesJS;
-
     particlesJS('particles-js', {
       particles: {
         number: {
           value: 80,
           density: {
             enable: true,
-            value_area: 920,
+            value_area: 1000,
           },
         },
         size: {
@@ -32,8 +36,20 @@ function ParticlesComponent() {
         },
       },
     });
-  }, []);
-  return <div id="particles-js"></div>;
+    const handleWidthResize = () => {
+      setScreenSize({ width: window.innerWidth, ...screenSize });
+    };
+
+    window.addEventListener('resize', handleWidthResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWidthResize);
+    };
+  }, [screenSize]);
+
+  return (
+    <div id="particles-js" style={{ height: screenSize.height, width: screenSize.width }}></div>
+  );
 }
 
 export default ParticlesComponent;

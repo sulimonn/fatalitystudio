@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import './blog.css';
 import { useParams } from 'react-router-dom';
-import data from '../data/list_articles.js';
-import team from '../data/team_data.js';
-import TeamCard from '../intropage/ourteam/TeamCard.jsx';
+//import TeamCard from 'components/intropage/ourteam/TeamCard.jsx';
+import { useGetPostByIdQuery } from 'store/reducers/blogApi';
+
+import { CircularProgress, Box } from '@mui/material';
+import TeamCard from 'components/intropage/ourteam/TeamCard';
 
 function Article() {
   useEffect(() => {
@@ -17,49 +19,54 @@ function Article() {
     }
   }, []);
   const { id } = useParams();
-  console.log(id);
+  const { data: article = {}, isFetching } = useGetPostByIdQuery(id);
 
-  const article = data.find((item) => parseInt(item.id) === parseInt(id));
-  const author = team.find((item) => parseInt(article.authorId) === parseInt(item.id));
+  if (isFetching)
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100%">
+        <CircularProgress />
+      </Box>
+    );
+
   return (
     <section className="blog_article">
       <div className="blog_article_img">
-        <img src={require('../../images/blog/' + article.src)} alt="" />
+        <img src={article.cover} alt="cover" />
       </div>
       <div className="content_heading">
-        <h4 className="dsc1">{article.text}</h4>
-        <h3 className="headline3">{article.head.heading}</h3>
+        <h4 className="dsc1">{article.introduction}</h4>
+        <h3 className="headline3">{article.title}</h3>
       </div>
       <div className="blog_content">
         <div className="content_text">
           <div className="content_text_head">
-            {article.head.text.split('\n').map((paragraph, index) => (
+            {article.content.split('\n').map((paragraph, index) => (
               <p className="paragraph" key={index}>
                 {paragraph}
               </p>
             ))}
             <div className="img">
-              <img src={require('../../images/' + article.head.src)} alt="" />
+              <img src={article.photo} alt="content" />
             </div>
           </div>
           <div className="sub_text">
-            <h4 className="headline4">{article.sub1.head}</h4>
-            {article.sub1.text.split('\n').map((paragraph, index) => (
+            <h4 className="headline4">{article.title_sec1}</h4>
+            {article.content_sec1.split('\n').map((paragraph, index) => (
               <p className="paragraph" key={index}>
                 {paragraph}
               </p>
             ))}
           </div>
-          <h2 className="quote">{article.big} </h2>
+          <h2 className="quote">{article?.middle_sec_text} </h2>
           <div className="sub_text">
-            <h4 className="headline4">{article.sub2.head}</h4>
-            {article.sub2.text.split('\n').map((paragraph, index) => (
+            <h4 className="headline4">{article.title_sec2}</h4>
+            {article.content_sec2.split('\n').map((paragraph, index) => (
               <p className="paragraph" key={index}>
                 {paragraph}
               </p>
             ))}
           </div>
-          <TeamCard data={author} />
+          <TeamCard id={article.author} />
         </div>
       </div>
     </section>

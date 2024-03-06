@@ -27,7 +27,7 @@ code {
 
 @font-face {
   font-family: 'Bowler';
-  src: url('./fonts/ofont.ru_Bowler.ttf') format('truetype');
+  src: url('images/fonts/ofont.ru_Bowler.ttf') format('truetype');
   font-weight: 500;
 }
 :root {
@@ -40,6 +40,8 @@ code {
   --color-drk-gray: #242424;
   --color-blue: #08fffc99;
   --color-lght-blue: #08fffbd7;
+  --swiper-navigation-color: var(--color-white);
+  --swiper-pagination-color: var(--color-white);
 
   --fs-dt-h1: calc(100vw / 7);
   --fs-dt-h2: 160px;

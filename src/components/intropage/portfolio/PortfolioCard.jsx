@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import BtnSimple from '../../utils/btn/BtnSimple';
+import BtnSimple from 'components/utils/btn/BtnSimple';
+import useGetServiceType from 'components/utils/getServiceType';
 
 function PortfolioCard({ data }) {
+  const serviceType = useGetServiceType(data.service_id);
   useEffect(() => {
     const cards = document.querySelectorAll('.portfolio-card');
     const handleResize = () => {
@@ -25,37 +27,28 @@ function PortfolioCard({ data }) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  if (!data) {
+    return null;
+  }
   return (
     <Link
       to={'/portfolio/' + data.id}
-      className={`portfolio-card group ` + data.type}
-      style={{ background: data.bgColor }}
+      className={`portfolio-card group ` + serviceType}
+      style={{ background: data.color }}
     >
       <div className="portfolio-card-text">
-        <h5 className="headline4">{data.full}</h5>
-        <p className="paragraph">{data.describe}</p>
+        <h5 className="headline4">{data.title}</h5>
+        <p className="paragraph">{data.description}</p>
       </div>
       <div className="portfolio-card-img">
         <div className="portfolio-card-img-svg">
-          <img
-            className={data.type}
-            src={require('../../../images/portfolio/' + data.icon)}
-            alt={data.name}
-          />
+          <img loading="lazy" className={serviceType} src={data.background_1} alt={data.title} />
         </div>
         <div className="portfolio-card-img-phone">
-          {data.type !== 'website' && (
-            <img
-              src={require('../../../images/portfolio/' + data.bg)}
-              alt=""
-              className={'bg ' + data.type}
-            />
+          {serviceType !== 'website' && (
+            <img loading="lazy" src={data.background_2} alt="" className={'bg ' + serviceType} />
           )}
-          <img
-            className={'phone ' + data.type}
-            src={require('../../../images/portfolio/' + data.cover)}
-            alt="pic"
-          />
+          <img loading="lazy" className={'phone ' + serviceType} src={data.cover} alt="pic" />
         </div>
       </div>
       <span className="position-absolute">

@@ -69,7 +69,7 @@ function FeedbackItem({ src }) {
           </div>
         </div>
         <div className="feedback__letter">
-          <img src={require('../../../images/' + src.src)} alt="feedback" />
+          <img src={require('images/' + src.src)} alt="feedback" />
         </div>
       </div>
     </>

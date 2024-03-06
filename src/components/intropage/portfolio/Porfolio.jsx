@@ -1,10 +1,14 @@
 import React from 'react';
 import './portfolio.css';
-import portfolios from '../../data/portfolio_list';
 import PortfolioCard from './PortfolioCard';
-import BtnOutlineXl from '../../utils/btn/BtnOutlineXL';
+import BtnOutlineXl from 'components/utils/btn/BtnOutlineXL';
+import { useGetProjectQuery } from 'store/reducers/portfolio';
 
 function Portfolio() {
+  const { data: portfolios = [], isLoading } = useGetProjectQuery();
+  if (isLoading) {
+    return null;
+  }
   return (
     <div className="portfolio content" id="portfolio">
       <div className="portfolio-title">

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import portfolios from '../data/portfolio_list';
 import './style.css';
-import PortfolioCard from '../intropage/portfolio/PortfolioCard';
+import PortfolioCard from 'components/intropage/portfolio/PortfolioCard';
+import { useGetProjectQuery } from 'store/reducers/portfolio';
 
 function PorrtfoliosPage() {
+  const { data: portfolios = [], isLoading } = useGetProjectQuery();
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBlogElement = document.querySelectorAll('.navportfolio');
@@ -14,6 +15,9 @@ function PorrtfoliosPage() {
       navBlogElement.forEach((item) => item.classList.add('active-link'));
     }
   }, []);
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <section className="portfolios_page pt-5">
@@ -25,10 +29,10 @@ function PorrtfoliosPage() {
           ))}
         </div>
         <div className="portfolio-cards">
-          <PortfolioCard key={portfolios[0].id} data={portfolios[0]} />
+          <PortfolioCard key={portfolios[0]?.id} data={portfolios[0]} />
         </div>
         <div className="portfolio-cards">
-          {portfolios.map((item) => (
+          {portfolios?.map((item) => (
             <PortfolioCard key={item.id} data={item} />
           ))}
         </div>

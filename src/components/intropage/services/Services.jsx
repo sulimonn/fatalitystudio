@@ -1,8 +1,9 @@
 import React from 'react';
 import './services.css';
 import ServiceCard from './ServiceCard';
-import services from '../../data/services_list.js';
+import { useGetServicesQuery } from 'store/reducers/serviceApi';
 function Services() {
+  const { data: services = [] } = useGetServicesQuery();
   return (
     <div className="services" id="services">
       <h4 className="services-title headline3">Услуги</h4>
@@ -10,7 +11,12 @@ function Services() {
         <div className="grid-container">
           {services.map((item, index) => (
             <div className="grid-item" key={index}>
-              <ServiceCard id={item.id} title={item.title} svg={item.svg} text={item.text} />
+              <ServiceCard
+                id={item.id}
+                title={item.title}
+                svg={item?.svg}
+                text={item.description}
+              />
             </div>
           ))}
         </div>

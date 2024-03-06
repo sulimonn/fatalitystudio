@@ -10,6 +10,7 @@
   text-decoration: none;
   column-gap: 25px;
   row-gap: 10px;
+  grid-column: span 2;
 }
 
 .main-article__img,
@@ -54,6 +55,8 @@
   column-gap: 19px;
 }
 .article .article__info {
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
   color: var(--color-white);
 }

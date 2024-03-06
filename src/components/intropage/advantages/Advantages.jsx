@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './adv.css';
-import Photo from '../../../images/Rectangle 42334.png';
-import advantages from '../../data/advantages_list';
+import Photo from 'images/Rectangle 42334.png';
+import advantages from 'components/data/advantages_list';
 
 function Advantages() {
   const [rotation, setRotation] = useState(false);

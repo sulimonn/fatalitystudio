@@ -1,7 +1,7 @@
 .project-head-img {
   border-radius: 60px;
   min-width: 100%;
-  height: 600px;
+  height: 660px;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -33,9 +33,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.project-head-img .phones img {
-  padding: 0 30px;
   height: 500px;
 }
 .project-head-img .phones img:first-child {
@@ -50,8 +47,9 @@
 }
 
 .project-content .headline2 span {
-  width: 70%;
+  width: 75%;
   margin-left: auto;
+  padding-right: 5%;
 }
 .project-content .headline2.website span {
   width: 100%;
@@ -62,8 +60,8 @@
   width: 100%;
 }
 .content .left-side {
-  min-width: 30%;
-  width: 30%;
+  min-width: 25%;
+  width: 25%;
 }
 .content .left-side h2,
 .content .left-side h6,
@@ -75,14 +73,16 @@
   text-transform: uppercase;
 }
 .content .right-side {
-  flex: 1;
+  max-width: 70%;
 }
 .aboute-service .btn,
 .content .right-side .paragraph {
+  font-weight: 300;
   width: 82%;
 }
 .sub_text .quote {
-  font-size: calc(var(--fs-dt-quote) - 2px);
+  font-size: calc(var(--fs-dt-quote) - 4px);
+  line-height: 1.2;
   padding: 20px 0;
 }
 
@@ -126,7 +126,7 @@
   }
   .project-head-img {
     border-radius: 23px;
-    height: 270px;
+    height: 250px;
   }
   .project-head-img .icon {
     height: 100%;
@@ -135,9 +135,11 @@
   .project-head-img .bg {
     left: 40%;
   }
+  .project-head-img .phones {
+    height: 90%;
+  }
   .project-head-img .phones img {
-    padding: 5px;
-    height: 200px;
+    padding: 0;
   }
   .project-head-img .phones img:first-child {
     height: 195px;
@@ -153,6 +155,7 @@
   }
   .content .right-side {
     padding: 0;
+    max-width: 100%;
   }
   .content .right-side .paragraph {
     width: 100%;
@@ -188,4 +191,30 @@
   .aboute-service h1 {
     line-height: 30px;
   }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.swiper-scrollbar-drag,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  display: none;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 3em !important;
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-white);
+  width: 0.3em;
+  height: 0.3em !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease-in-out;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 0.2em !important;
 }

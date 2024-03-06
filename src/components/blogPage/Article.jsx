@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import BtnSimple from '../utils/btn/BtnSimple';
+import BtnSimple from 'components/utils/btn/BtnSimple';
+import formatDate from 'components/utils/date/formatDate';
 
-function Article({ data }) {
+function Article({ article }) {
   const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -18,17 +19,17 @@ function Article({ data }) {
         <img
           className="img"
           onLoad={handleImageLoad}
-          src={require(`../../images/blog/${data.src}`)}
-          alt="apicture"
+          src={article?.cover}
+          alt="cover"
           style={{ display: loading ? 'none' : 'block' }}
         />
       </div>
       <div className="article__info">
-        <p className="date dsc1">{data.date}</p>
-        <h2 className="headline4">{data.head.heading}</h2>
-        <p className="paragraph">{data.text}</p>
+        <p className="date dsc1">{formatDate(article.created_at)}</p>
+        <h2 className="headline4">{article.title}</h2>
+        <p className="paragraph">{article.introduction}</p>
         <div className="article_link">
-          <BtnSimple link={'/blog/' + data.id}>Читать статью</BtnSimple>
+          <BtnSimple link={'/blog/' + article.id}>Читать статью</BtnSimple>
         </div>
       </div>
     </section>
