@@ -4,8 +4,6 @@ import { useGetUsersQuery } from 'store/reducers/usersApi';
 
 function TeamCard({ id }) {
   const { data, isFetching } = useGetUsersQuery();
-
-  console.log(id);
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" height="300px" width="100%">
@@ -14,7 +12,6 @@ function TeamCard({ id }) {
     );
   }
   const author = data.find((item) => item.id === id);
-  console.log(author);
   return (
     <div className="ourteam-item row">
       <div className="img col-lg-4">

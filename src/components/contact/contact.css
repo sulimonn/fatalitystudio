@@ -51,8 +51,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
   align-self: stretch;
+  text-align: left;
 }
 .contact-form select {
   width: 100%;
@@ -93,12 +93,12 @@
   transition: all 0.3s ease-in-out;
 }
 .form-item,
-.selected-option {
+.custom-dropdown {
   width: 100%;
   padding: 10px 20px;
   align-items: center;
   font-size: var(--fs-dt-btn2);
-  margin: 0;
+  margin: 15px 0 0 0;
   color: var(--color-gray);
 }
 .selected-option {
@@ -107,6 +107,7 @@
 }
 .contact-form input,
 .contact-form .custom-dropdown {
+  color: white;
   border-radius: 40px;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
@@ -115,6 +116,9 @@
 }
 input:focus {
   outline: none;
+}
+.error-input {
+  color: #f44336 !important;
 }
 .contact-form .custom-dropdown {
   display: flex;

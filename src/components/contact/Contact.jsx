@@ -34,21 +34,53 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!task.service_id) {
-      alert('Укажите интересующую услугу');
-      return;
+      setErrors({ ...errors, service_id: 'Поле не может остаться пустым' });
     }
-    const response = await addTask(task);
-    console.log(response);
-    if (response.error) setErrors(response.error.data);
-    else {
-      setTask({});
-      alert('Ваша заявка успешно отправлена');
+    const isValidPhoneNumber = /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(task.phone_number);
+    if (!task.phone_number || !task.name) {
+      setErrors({ ...errors, phone_number: 'Поле не может остаться пустым' });
+    }
+    if (!isValidPhoneNumber) {
+      setErrors({ ...errors, phone_number: 'Номер телефона введен некорректно' });
+    } else {
+      const response = await addTask(task);
+
+      if (response.error) setErrors(response.error.data);
+      else {
+        setTask({});
+        alert('Ваша заявка успешно отправлена');
+      }
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTask({ ...task, [name]: value });
+    if (name !== 'phone_number') setTask({ ...task, [name]: value });
+    else {
+      const digitsOnly = value.replace(/\D/g, '');
+
+      let formattedValue = '';
+      if (digitsOnly === '7') {
+        // If the input contains only "+7", set it to an empty string
+        formattedValue = '';
+      } else if (digitsOnly.length > 0) {
+        formattedValue = '+7';
+        if (digitsOnly.length > 1) {
+          formattedValue += ' ' + digitsOnly.slice(1, 4);
+        }
+        if (digitsOnly.length > 4) {
+          formattedValue += ' ' + digitsOnly.slice(4, 7);
+        }
+        if (digitsOnly.length > 7) {
+          formattedValue += ' ' + digitsOnly.slice(7, 9);
+        }
+        if (digitsOnly.length > 9) {
+          formattedValue += ' ' + digitsOnly.slice(9, 11);
+        }
+      }
+      setTask({ ...task, [name]: formattedValue });
+    }
+    setErrors({ ...errors, [name]: null });
   };
 
   return (
@@ -56,11 +88,12 @@ function Contact() {
       <div className="contact-content" id="contact">
         <div className="contact-text">
           <div className="contact-text-title">
-            <h3 className="headline3">Давайте обсудим ваш проект прямо сейчас</h3>
-            <p className="dsc1">Оставьте свой номер и мы вам перезвоним</p>
+            <h3 className="headline3 pointer-all">Давайте обсудим ваш проект прямо сейчас</h3>
+            <p className="dsc1 pointer-all">Оставьте свой номер и мы вам перезвоним</p>
           </div>
           <div className="contact-text-footer">
             <svg
+              className="pointer-all"
               width="14"
               height="17"
               viewBox="0 0 14 17"
@@ -164,39 +197,52 @@ function Contact() {
         <form action="" className="contact-form" onSubmit={handleSubmit}>
           <input
             placeholder="Ваше имя"
-            className="form-item"
+            className={`form-item pointer-all ${Boolean(errors?.name) && ' error-input'}`}
             type="text"
             name="name"
             id="name"
             value={task?.name || ''}
             onChange={handleChange}
-            required
           />
           {errors?.name && (
-            <FormHelperText error id="standard-weight-helper-text-name">
+            <FormHelperText
+              error
+              id="standard-weight-helper-text-name"
+              sx={{ alignSelf: 'flex-start', ml: 2 }}
+            >
               {errors.name}
             </FormHelperText>
           )}
           <input
-            placeholder="+7 999 999 99 99"
-            className="form-item"
-            type="tel"
-            name="phone_number"
-            id="phone"
             value={task?.phone_number || ''}
             onChange={handleChange}
-            required
+            name="phone_number"
+            className={`form-item pointer-all ${Boolean(errors?.phone_number) && ' error-input'}`}
+            placeholder="+7 999 999 99 99"
+            type="tel"
+            id="phone"
           />
           {errors?.phone_number && (
-            <FormHelperText error id="standard-weight-helper-text-phone">
+            <FormHelperText
+              error
+              id="standard-weight-helper-text-phone"
+              sx={{ alignSelf: 'flex-start', ml: 2 }}
+            >
               {errors.phone_number}
             </FormHelperText>
           )}
-          <div className="custom-dropdown" onClick={() => setDropdownOpen(!isDropdownOpen)}>
+          <div
+            className="custom-dropdown pointer-all"
+            onClick={() => setDropdownOpen(!isDropdownOpen)}
+          >
             <div
               className={`dropdown-arrow ${isDropdownOpen ? 'rotate-arrow' : 'unset-arrow'}`}
             ></div>
-            <div className={`selected-option ${isDropdownOpen ? 'open' : ''}`}>
+            <div
+              className={`selected-option ${isDropdownOpen ? 'open' : ''} ${
+                Boolean(errors?.service_id) && ' error-input'
+              }`}
+            >
               {selectedOption.title || 'Интересующая услуга'}
             </div>
             <input
@@ -224,12 +270,16 @@ function Contact() {
           </div>
 
           {errors?.service_id && (
-            <FormHelperText error id="standard-weight-helper-text-service_id">
+            <FormHelperText
+              error
+              id="standard-weight-helper-text-service_id"
+              sx={{ alignSelf: 'flex-start', ml: 2 }}
+            >
               {errors.service_id}
             </FormHelperText>
           )}
           <div className="form-text form-item">
-            <p className="dsc2">
+            <p className="dsc2 pointer-all">
               При нажатии на кнопку “Обсудить проект”, вы соглашаетесь с политикой
               конфиденциальности сайта
             </p>
