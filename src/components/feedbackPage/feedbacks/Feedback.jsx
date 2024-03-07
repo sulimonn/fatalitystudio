@@ -6,7 +6,7 @@ function FeedbackItem({ src }) {
     <>
       <div className="feedback_container">
         <div className="feedback__company">
-          <div className="feedback__company_logo">
+          <div className="feedback__company_logo pointer-all">
             <svg
               width="96"
               height="111"
@@ -57,7 +57,7 @@ function FeedbackItem({ src }) {
             <h2>FATALITY</h2>
           </div>
           <div className="feedback__company_text">
-            <p className="paragraph">
+            <p className="paragraph pointer-all">
               За годы работы мы установили прочные отношения с нашими клиентами, которые высоко
               ценят нас за вдумчивый подход, внимание к деталям и стремление к идеальному
               результату. За годы работы мы установили прочные отношения с нашими клиентами, которые

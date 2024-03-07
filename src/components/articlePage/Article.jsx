@@ -34,14 +34,14 @@ function Article() {
         <img src={article.cover} alt="cover" />
       </div>
       <div className="content_heading">
-        <h4 className="dsc1">{article.introduction}</h4>
-        <h3 className="headline3">{article.title}</h3>
+        <h4 className="dsc1 pointer-all">{article.introduction}</h4>
+        <h3 className="headline3 pointer-all">{article.title}</h3>
       </div>
       <div className="blog_content">
         <div className="content_text">
           <div className="content_text_head">
             {article.content.split('\n').map((paragraph, index) => (
-              <p className="paragraph" key={index}>
+              <p className="paragraph pointer-all" key={index}>
                 {paragraph}
               </p>
             ))}
@@ -50,18 +50,18 @@ function Article() {
             </div>
           </div>
           <div className="sub_text">
-            <h4 className="headline4">{article.title_sec1}</h4>
+            <h4 className="headline4 pointer-all">{article.title_sec1}</h4>
             {article.content_sec1.split('\n').map((paragraph, index) => (
-              <p className="paragraph" key={index}>
+              <p className="paragraph pointer-all" key={index}>
                 {paragraph}
               </p>
             ))}
           </div>
-          <h2 className="quote">{article?.middle_sec_text} </h2>
+          <h2 className="quote pointer-all">{article?.middle_sec_text} </h2>
           <div className="sub_text">
             <h4 className="headline4">{article.title_sec2}</h4>
             {article.content_sec2.split('\n').map((paragraph, index) => (
-              <p className="paragraph" key={index}>
+              <p className="paragraph pointer-all" key={index}>
                 {paragraph}
               </p>
             ))}

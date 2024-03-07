@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './carousel.css';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const SwiperComponent = ({ data, bg }) => {
   if (!data) {
@@ -17,14 +17,20 @@ const SwiperComponent = ({ data, bg }) => {
     const slide = (
       <SwiperSlide key={i} style={{ height: '100%' }}>
         <Box width={'80%'} height={{ xs: '300px', md: '600px' }} mx={'auto'}>
-          <Grid container spacing={0} width={'100%'} height={'100%'} m={'0'}>
+          <Box
+            width={'100%'}
+            height={'100%'}
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            gap={3}
+          >
             {item.map((sub, index) => {
               return (
-                <Grid
+                <Box
                   item
                   key={index}
-                  height={'100%'}
-                  xs={4}
+                  height={'95%'}
                   display={'flex'}
                   justifyContent={'center'}
                   alignItems={'center'}
@@ -49,18 +55,18 @@ const SwiperComponent = ({ data, bg }) => {
                       style={{
                         display: 'block',
                         width: 'auto',
-                        height: '110%',
-                        objectFit: 'contain',
+                        height: '100%',
+                        objectFit: 'cover',
                       }}
                     />
                     <Typography mt={1} variant="subtitle2" textAlign={'center'}>
-                      {sub?.description}
+                      {sub?.title}
                     </Typography>
                   </Box>
-                </Grid>
+                </Box>
               );
             })}
-          </Grid>
+          </Box>
         </Box>
       </SwiperSlide>
     );
@@ -68,15 +74,17 @@ const SwiperComponent = ({ data, bg }) => {
   }
   return (
     <Box height={{ xs: '300px', md: '600px' }} backgroundColor={bg} borderRadius={4}>
-      <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-      >
-        {slides}
-      </Swiper>
+      <div className="pointer-all" style={{ height: '100%', width: '100%' }}>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+        >
+          {slides}
+        </Swiper>
+      </div>
     </Box>
   );
 };

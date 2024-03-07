@@ -27,7 +27,7 @@ function Blog() {
   return (
     <section className="articles pt-4">
       <h2 className="headline2">
-        <span className="yellow">Блог</span>
+        <span className="yellow pointer-all">Блог</span>
       </h2>
       {articles.length !== 0 && <MainArticle article={articles[0]} />}
       <div className="articles__container">

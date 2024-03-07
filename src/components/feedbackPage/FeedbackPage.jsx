@@ -30,8 +30,8 @@ function FeedbackPage() {
   return (
     <section>
       <div className="feedback_head pt-5">
-        <h2 className="headline2">Отзывы клиентов</h2>
-        <p className="quote">
+        <h2 className="headline2 pointer-all">Отзывы клиентов</h2>
+        <p className="quote pointer-all">
           За годы работы мы установили прочные отношения с нашими клиентами, которые высоко ценят
           нас за вдумчивый подход, внимание к деталям и стремление к идеальному результату.
         </p>

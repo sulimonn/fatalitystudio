@@ -6,7 +6,7 @@ function Services() {
   const { data: services = [] } = useGetServicesQuery();
   return (
     <div className="services" id="services">
-      <h4 className="services-title headline3">Услуги</h4>
+      <h4 className="services-title headline3 pointer-all">Услуги</h4>
       <div className="services-container">
         <div className="grid-container">
           {services.map((item, index) => (

@@ -19,7 +19,7 @@ function MainArticle({ article }) {
           </div>
         )}
         <img
-          className="img"
+          className="img pointer-all"
           onLoad={handleImageLoad}
           src={article?.cover}
           alt="cover"
@@ -27,9 +27,9 @@ function MainArticle({ article }) {
         />
       </div>
       <div className="main-article__info">
-        <p className="date dsc1">{formatDate(article.created_at)}</p>
-        <h2 className="headline3">{article.title}</h2>
-        <p className="headline4">{article.introduction}</p>
+        <p className="date dsc1 pointer-all">{formatDate(article.created_at)}</p>
+        <h2 className="headline3 pointer-all">{article.title}</h2>
+        <p className="headline4 pointer-all">{article.introduction}</p>
         <div>
           <Link to={'/blog/' + article.id}>
             <BtnOutline>Читать статью</BtnOutline>

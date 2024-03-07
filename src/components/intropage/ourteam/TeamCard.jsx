@@ -20,6 +20,7 @@ function TeamCard({ id }) {
       <div className="img col-lg-4">
         {author.avatar ? (
           <img
+            className="pointer-all"
             loading="lazy"
             src={author.avatar}
             alt="avatar"
@@ -44,7 +45,7 @@ function TeamCard({ id }) {
         )}
       </div>
       <div className="info col-lg-8">
-        <h6 className="dsc1">
+        <h6 className="dsc1 pointer-all">
           {author.first_name && author.last_name
             ? author.first_name + ' ' + author.last_name
             : author.username}

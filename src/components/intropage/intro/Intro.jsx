@@ -12,11 +12,11 @@ function Intro() {
   };
   return (
     <div className="intro">
-      <h1 className="headline1">
+      <h1 className="headline1 pointer-all">
         FATA<span className="yellow">LITY</span>
       </h1>
       <div className="order-project">
-        <p className="quote">
+        <p className="quote pointer-all">
           Разрабатываем сайты, мобильные приложения, системы и сервисы любой сложности
         </p>
         <div className="intro__img">

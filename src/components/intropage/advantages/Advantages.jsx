@@ -17,11 +17,11 @@ function Advantages() {
 
   return (
     <div className="content">
-      <h3 className="headline3">преимущества</h3>
+      <h3 className="headline3 pointer-all">преимущества</h3>
       <div className="advatges-right-side">
         <div className="row d-flex">
           <div className="advatges-about col-lg-6 col-md-12 offset-md-0 offset-lg-6">
-            <p className="paragraph">
+            <p className="paragraph pointer-all">
               Наши достижения говорят сами за себя: мы успешно завершили более 100 проектов и
               уверенно присутствуем на рынке веб-разработки уже 5 лет, предоставляя клиентам
               надежность, опыт и профессионализм.
@@ -33,8 +33,9 @@ function Advantages() {
             return (
               <div key={item.id} className="advantages-collapse-item">
                 <div className="collapse-item-title">
-                  <h4 className="headline4">{item.title}</h4>
+                  <h4 className="headline4 pointer-all">{item.title}</h4>
                   <button
+                    className="pointer-all"
                     onClick={handleButtonClick}
                     type="button"
                     data-bs-toggle="collapse"
@@ -78,11 +79,11 @@ function Advantages() {
                   </button>
                 </div>
                 <div className="collapse-item-target row collapse" id={'collapse' + item.id}>
-                  <div className="target-img col-lg-6">
+                  <div className="target-img col-lg-6 pointer-all">
                     <img src={Photo} alt="" />
                   </div>
                   <div className="target-text col-lg-4">
-                    <p className="paragraph">{item.description}</p>
+                    <p className="paragraph pointer-all">{item.description}</p>
                   </div>
                 </div>
               </div>

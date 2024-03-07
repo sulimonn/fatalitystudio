@@ -11,7 +11,7 @@ const serviceApi = createApi({
     }),
     addTask: builder.mutation({
       query: (body) => ({
-        url: 'task/add',
+        url: 'task',
         method: 'POST',
         body,
       }),

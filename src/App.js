@@ -20,7 +20,7 @@ function App() {
 
   return (
     <ScrollTop>
-      <div className="App">
+      <div className="App pointer-none">
         <ParticlesComponent key={particlesKey} />
         <Header />
         <div className="container">

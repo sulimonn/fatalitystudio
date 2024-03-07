@@ -3,6 +3,8 @@ import './style.css';
 import PortfolioCard from 'components/intropage/portfolio/PortfolioCard';
 import { useGetProjectQuery } from 'store/reducers/portfolio';
 
+import { Box, CircularProgress } from '@mui/material';
+
 function PorrtfoliosPage() {
   const { data: portfolios = [], isLoading } = useGetProjectQuery();
   useEffect(() => {
@@ -16,12 +18,16 @@ function PorrtfoliosPage() {
     }
   }, []);
   if (isLoading) {
-    return null;
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" height="100vh" width="100%">
+        <CircularProgress />
+      </Box>
+    );
   }
 
   return (
     <section className="portfolios_page pt-5">
-      <h2 className="headline2">Портфолио</h2>
+      <h2 className="headline2 pointer-all">Портфолио</h2>
       <div className="portfolios_container">
         <div className="portfolio-cards">
           {portfolios.map((item) => (

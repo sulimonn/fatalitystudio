@@ -5,11 +5,12 @@ function Partners() {
   return (
     <div className="content partners">
       <div className="left-side">
-        <h3 className="headline3">Наши партнеры</h3>
+        <h3 className="headline3 pointer-all">Наши партнеры</h3>
       </div>
       <div className="partners-list">
         <div className="partner">
           <svg
+            className="pointer-all"
             width="220"
             height="65"
             viewBox="0 0 220 65"
@@ -35,6 +36,7 @@ function Partners() {
         </div>
         <div className="partner">
           <svg
+            className="pointer-all"
             width="336"
             height="107"
             viewBox="0 0 336 107"
@@ -196,6 +198,7 @@ function Partners() {
         </div>
         <div className="partner">
           <svg
+            className="pointer-all"
             width="274"
             height="79"
             viewBox="0 0 274 79"

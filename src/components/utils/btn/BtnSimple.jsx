@@ -4,13 +4,13 @@ import ArrowSvg from './Arrow';
 function BtnSimple({ children, link = null }) {
   if (link)
     return (
-      <Link to={link} className="btn2 btn-simple">
+      <Link to={link} className="btn2 btn-simple pointer-all">
         {children}
         <ArrowSvg />
       </Link>
     );
   return (
-    <button className="btn2 btn-simple">
+    <button className="btn2 btn-simple pointer-all">
       {children}
       <ArrowSvg />
     </button>

@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import 'particles.js';
 
 function ParticlesComponent() {
+  const { pathname } = useLocation();
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
     height: document.body.scrollHeight,
   });
+
+  useEffect(() => {
+    setScreenSize((prev) => {
+      return {
+        ...prev,
+        height: document.body.scrollHeight,
+      };
+    });
+  }, [pathname]);
 
   useEffect(() => {
     const particlesJS = window.particlesJS;
@@ -34,6 +45,14 @@ function ParticlesComponent() {
           width: 1,
           distance: 140,
         },
+        interactivity: {
+          evnts: {
+            onclick: {
+              enable: true,
+              mode: 'grab',
+            },
+          },
+        },
       },
     });
     const handleWidthResize = () => {
@@ -48,7 +67,11 @@ function ParticlesComponent() {
   }, [screenSize]);
 
   return (
-    <div id="particles-js" style={{ height: screenSize.height, width: screenSize.width }}></div>
+    <div
+      id="particles-js"
+      className="pointer-all"
+      style={{ height: screenSize.height, width: screenSize.width }}
+    ></div>
   );
 }
 

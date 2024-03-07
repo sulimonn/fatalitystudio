@@ -44,10 +44,9 @@ function Project() {
 
   return (
     <section className="project-page">
-      <div className={'project-head-img'} style={{ backgroundColor: project.color }}>
-        <img loading="lazy" className="icon" src={project.background_1} alt="background_1" />
+      <div className="project-head-img" style={{ backgroundColor: project.color }}>
+        <img className="icon" src={project.background_1} alt="background_1" />
         <img
-          loading="lazy"
           className="bg"
           src={project.background_2 === null ? project.background_1 : project.background_2}
           alt="background_2"
@@ -57,12 +56,7 @@ function Project() {
             .map((item) => JSON.parse(item))
             .map((item, index) => (
               <>
-                <Box
-                  width={'100%'}
-                  px={{ xs: 1, md: 2 }}
-                  height={{ xs: '80%', sm: '90%', md: '100%' }}
-                  key={item.id}
-                >
+                <Box width={'100%'} height={{ xs: '80%', sm: '90%', md: '100%' }} key={item.id}>
                   <img
                     loading="lazy"
                     onLoad={handleImageLoad}
@@ -88,12 +82,12 @@ function Project() {
         </h1>
         <div className="content">
           <div className="left-side">
-            <h2 className="headline3">О проекте</h2>
+            <h2 className="headline3 pointer-all">О проекте</h2>
           </div>
           <div className="sub_text right-side">
             <p className="quote">{project?.about}</p>
             {project?.about_content.split('\n').map((paragraph, index) => (
-              <p className="paragraph" key={index}>
+              <p className="paragraph pointer-all" key={index}>
                 {paragraph}
               </p>
             ))}
@@ -101,7 +95,7 @@ function Project() {
         </div>
         <div className="content project-carousel">
           <div className="left-side">
-            <h6 className="pt-0 dsc1">Дополнительные экраны</h6>
+            <h6 className="pt-0 dsc1 pointer-all">Дополнительные экраны</h6>
           </div>
           <div className="right-side">
             <Swiper
@@ -112,11 +106,11 @@ function Project() {
         </div>
         <div className="project-solution content">
           <div className="left-side">
-            <h2 className="headline3">Решение</h2>
+            <h2 className="headline3 pointer-all">Решение</h2>
           </div>
           <div className="sub_text right-side">
             {project?.solution.split('\n').map((paragraph, index) => (
-              <p className="paragraph" key={index}>
+              <p className="paragraph pointer-all" key={index}>
                 {paragraph}
               </p>
             ))}
@@ -127,9 +121,9 @@ function Project() {
         <div className="left-side"></div>
         <div className="right-side">
           <h3 className="pt-0 headline3">
-            <span className="yellow">{service?.title}</span>
+            <span className="yellow pointer-all">{service?.title}</span>
           </h3>
-          <p className="paragraph py-2">{service?.description}</p>
+          <p className="paragraph py-2 pointer-all">{service?.description}</p>
           <div className="btn">
             <BtnOutlineXl link={'/services/' + service?.id}>Подробнее об услуге</BtnOutlineXl>
           </div>

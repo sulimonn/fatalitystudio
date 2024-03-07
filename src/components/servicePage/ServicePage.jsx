@@ -68,7 +68,7 @@ function ServicePage() {
               .map((item, i) => (
                 <div key={item.id} className="step">
                   <div className="step-text">
-                    <div className="headline4 step-title">{item.title}</div>
+                    <div className="headline4 step-title">{item.name}</div>
                     <p className="paragraph">{item.content}</p>
                   </div>
                   <div className="step-number">

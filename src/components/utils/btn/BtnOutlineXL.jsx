@@ -4,7 +4,7 @@ import ArrowSvg from './Arrow';
 function BtnOutlineXl({ children, link = null }) {
   if (link) {
     return (
-      <Link to={link} className="btn1 btn-outline btn-outline-xl">
+      <Link to={link} className="btn1 btn-outline btn-outline-xl pointer-all">
         <span>
           {children}
           <ArrowSvg />
@@ -13,7 +13,7 @@ function BtnOutlineXl({ children, link = null }) {
     );
   }
   return (
-    <button className="btn1 btn-outline btn-outline-xl">
+    <button className="btn1 btn-outline btn-outline-xl pointer-all">
       {children}
       <ArrowSvg />
     </button>

@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <>
-      <div className="header">
+      <div className="header pointer-all">
         <header className="text-white navbar navbar-expand-lg" onClick={hideCollapse}>
           <div className="container">
             <Link

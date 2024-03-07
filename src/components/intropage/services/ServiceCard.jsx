@@ -7,8 +7,8 @@ function ServiceCard({ id, title, text, svg = null }) {
     <div className="animate">
       <div className={`table-card show`} style={{ transition: 'height .5s ease-in-out' }}>
         <div className="table-card-body d-flex">
-          <h4 className="table-card-body-title headline4">{title}</h4>
-          <p className="table-card-body-about paragraph">{text}</p>
+          <h4 className="table-card-body-title headline4 pointer-all">{title}</h4>
+          <p className="table-card-body-about paragraph pointer-all">{text}</p>
           {svg !== null && <img src={require(`./svg/${svg}`)} alt={title} />}
           <Link to={'/services/' + id} className="position-absolute">
             <BtnSimple>Подробнее</BtnSimple>

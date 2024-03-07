@@ -3,15 +3,21 @@ import './contact.css';
 import BtnBlue from 'components/utils/btn/BtnBlue.jsx';
 import { useAddTaskMutation, useGetServicesQuery } from 'store/reducers/serviceApi';
 
+import { FormHelperText } from '@mui/material';
+
 function Contact() {
   const { data: services = [] } = useGetServicesQuery();
   const [addTask] = useAddTaskMutation();
   const [task, setTask] = useState({});
   const [selectedOption, setSelectedOption] = useState('Интересующая услуга');
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [errors, setErrors] = useState();
   const [unsetOption, setUnsetOpt] = useState(selectedOption);
+
   const handleSelectChange = (option) => {
     setSelectedOption(option);
+
+    setErrors({ ...errors, service_id: null });
     setTask({ ...task, service_id: option.id });
     setDropdownOpen(false);
     setUnsetOpt(selectedOption);
@@ -27,14 +33,22 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    task.service_id = selectedOption.id;
     if (!task.service_id) {
       alert('Укажите интересующую услугу');
       return;
     }
     const response = await addTask(task);
     console.log(response);
-    setTask({});
+    if (response.error) setErrors(response.error.data);
+    else {
+      setTask({});
+      alert('Ваша заявка успешно отправлена');
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setTask({ ...task, [name]: value });
   };
 
   return (
@@ -155,23 +169,29 @@ function Contact() {
             name="name"
             id="name"
             value={task?.name || ''}
-            onChange={(e) => {
-              setTask({ ...task, name: e.target.value });
-            }}
+            onChange={handleChange}
             required
           />
+          {errors?.name && (
+            <FormHelperText error id="standard-weight-helper-text-name">
+              {errors.name}
+            </FormHelperText>
+          )}
           <input
             placeholder="+7 999 999 99 99"
             className="form-item"
             type="tel"
-            name="phone"
+            name="phone_number"
             id="phone"
             value={task?.phone_number || ''}
-            onChange={(e) => {
-              setTask({ ...task, phone_number: e.target.value });
-            }}
+            onChange={handleChange}
             required
           />
+          {errors?.phone_number && (
+            <FormHelperText error id="standard-weight-helper-text-phone">
+              {errors.phone_number}
+            </FormHelperText>
+          )}
           <div className="custom-dropdown" onClick={() => setDropdownOpen(!isDropdownOpen)}>
             <div
               className={`dropdown-arrow ${isDropdownOpen ? 'rotate-arrow' : 'unset-arrow'}`}
@@ -179,7 +199,13 @@ function Contact() {
             <div className={`selected-option ${isDropdownOpen ? 'open' : ''}`}>
               {selectedOption.title || 'Интересующая услуга'}
             </div>
-            <input type="hidden" name="service_id" value={selectedOption.id || ''} required />
+            <input
+              type="hidden"
+              name="service_id"
+              value={selectedOption.id || ''}
+              required
+              onChange={handleChange}
+            />
             <ul
               onMouseLeave={() => handleMouseLeave()}
               className={`options-list`}
@@ -196,6 +222,12 @@ function Contact() {
               ))}
             </ul>
           </div>
+
+          {errors?.service_id && (
+            <FormHelperText error id="standard-weight-helper-text-service_id">
+              {errors.service_id}
+            </FormHelperText>
+          )}
           <div className="form-text form-item">
             <p className="dsc2">
               При нажатии на кнопку “Обсудить проект”, вы соглашаетесь с политикой

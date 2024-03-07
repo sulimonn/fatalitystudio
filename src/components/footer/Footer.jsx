@@ -11,7 +11,7 @@ function Footer() {
     window.open(mapLink, '_blank');
   };
   return (
-    <div className="footer">
+    <div className="footer pointer-all">
       <div className="container footer-container">
         <div className="side">
           <div className="footer-company">
