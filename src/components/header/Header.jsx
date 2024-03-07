@@ -182,7 +182,7 @@ function Header() {
                   activeClass="active"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={10}
                   duration={11200}
                   onClick={hideCollapse}
                   className="nav-link"
@@ -197,7 +197,7 @@ function Header() {
                 activeClass="active"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={10}
                 duration={11000}
                 onClick={hideCollapse}
               >
