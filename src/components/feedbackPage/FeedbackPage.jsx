@@ -1,22 +1,9 @@
 import React, { useEffect } from 'react';
 import FeedbackItem from './feedbacks/Feedback';
+import { useGetReviewsQuery } from 'store/reducers/reviewsApi';
 
 function FeedbackPage() {
-  const feedbacks = [
-    {
-      id: 1,
-      src: 'image 99.png',
-    },
-    {
-      id: 2,
-      src: 'image 99.png',
-    },
-    {
-      id: 3,
-      src: 'image 99.png',
-    },
-  ];
-
+  const { data: feedbacks = [] } = useGetReviewsQuery();
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBlogElement = document.querySelectorAll('.navfeedback');
@@ -37,7 +24,7 @@ function FeedbackPage() {
         </p>
       </div>
       {feedbacks.map((feedback) => {
-        return <FeedbackItem key={feedback.id} src={feedback} />;
+        return <FeedbackItem key={feedback.id} feedback={feedback} />;
       })}
     </section>
   );

@@ -8,6 +8,7 @@ import blogApi from './reducers/blogApi';
 import serviceApi from './reducers/serviceApi';
 import portfolioApi from './reducers/portfolio';
 import usersApi from './reducers/usersApi';
+import reviewsApi from './reducers/reviewsApi';
 
 // ==============================|| REDUX TOOLKIT - MAIN STORE ||============================== //
 
@@ -19,6 +20,7 @@ const store = configureStore({
       serviceApi.middleware,
       portfolioApi.middleware,
       usersApi.middleware,
+      reviewsApi.middleware,
     ),
 });
 

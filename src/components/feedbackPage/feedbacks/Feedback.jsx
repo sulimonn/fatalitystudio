@@ -1,7 +1,7 @@
 import React from 'react';
 import './feed.css';
 
-function FeedbackItem({ src }) {
+function FeedbackItem({ feedback }) {
   return (
     <>
       <div className="feedback_container">
@@ -57,19 +57,11 @@ function FeedbackItem({ src }) {
             <h2>FATALITY</h2>
           </div>
           <div className="feedback__company_text">
-            <p className="paragraph pointer-all">
-              За годы работы мы установили прочные отношения с нашими клиентами, которые высоко
-              ценят нас за вдумчивый подход, внимание к деталям и стремление к идеальному
-              результату. За годы работы мы установили прочные отношения с нашими клиентами, которые
-              высоко ценят нас за вдумчивый подход, внимание к деталям и стремление к идеальному
-              результату. За годы работы мы установили прочные отношения с нашими клиентами, которые
-              высоко ценят нас за вдумчивый подход, внимание к деталям и стремление к идеальному
-              результату.
-            </p>
+            <p className="paragraph pointer-all">{feedback.description}</p>
           </div>
         </div>
         <div className="feedback__letter">
-          <img src={require('images/' + src.src)} alt="feedback" />
+          <img src={feedback.src} alt="feedback" loading="lazy" />
         </div>
       </div>
     </>
