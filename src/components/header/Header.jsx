@@ -132,9 +132,9 @@ function Header() {
                     to="contact"
                     activeClass="active"
                     spy={true}
-                    smooth={false}
-                    offset={50}
-                    duration={1200}
+                    smooth={true}
+                    offset={1}
+                    duration={10000}
                     onClick={hideCollapse}
                     className="nav-link"
                   >
@@ -147,9 +147,9 @@ function Header() {
                   to="contact"
                   activeClass="active"
                   spy={true}
-                  smooth={false}
-                  offset={50}
-                  duration={1200}
+                  smooth={true}
+                  offset={5}
+                  duration={10000}
                   onClick={hideCollapse}
                 >
                   <BtnOutline>Заказать проект</BtnOutline>
@@ -181,9 +181,9 @@ function Header() {
                   to="contact"
                   activeClass="active"
                   spy={true}
-                  smooth={false}
+                  smooth={true}
                   offset={50}
-                  duration={1200}
+                  duration={11200}
                   onClick={hideCollapse}
                   className="nav-link"
                 >
@@ -196,9 +196,9 @@ function Header() {
                 to="contact"
                 activeClass="active"
                 spy={true}
-                smooth={false}
+                smooth={true}
                 offset={50}
-                duration={1200}
+                duration={11000}
                 onClick={hideCollapse}
               >
                 <BtnOutline>Заказать проект</BtnOutline>

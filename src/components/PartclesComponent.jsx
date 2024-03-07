@@ -45,12 +45,12 @@ function ParticlesComponent() {
           width: 1,
           distance: 140,
         },
-        interactivity: {
-          evnts: {
-            onclick: {
-              enable: true,
-              mode: 'grab',
-            },
+      },
+      interactivity: {
+        evnts: {
+          onclick: {
+            enable: false,
+            mode: 'grab',
           },
         },
       },
