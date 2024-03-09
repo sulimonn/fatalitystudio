@@ -1,23 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 import './header.css';
 import BtnOutline from 'components/utils/btn/Button1';
+import { Link as ScrollButton } from 'react-scroll';
 
 function Header() {
+  const location = useLocation();
   const hideCollapse = (e) => {
     const nav = document.getElementById('navbarResponsive');
     if (nav.classList.length === 2) {
       const btn = document.getElementById('collapseButton');
-      if (btn) btn.click();
+      if (btn) {
+        btn.click();
+      }
     }
   };
+
+  useEffect(() => {
+    if (window.location.pathname.includes('#contact')) {
+      const newPathname = window.location.pathname.replace('#contact', '');
+      location.replace(newPathname);
+    }
+  }, [location.pathname, location]);
+
   useEffect(() => {
     const handleResize = () => {
       const nav = document.getElementById('navbarResponsive');
       if (nav && window.innerWidth > 997) {
         const btn = document.getElementById('collapseButton');
-        if (btn && nav.classList.length === 2) btn.click();
+        if (btn && nav.classList.length === 2) {
+          nav.style.display = 'none';
+        }
       }
     };
 
@@ -128,32 +141,15 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <ScrollLink
-                    to="contact"
-                    activeClass="active"
-                    spy={true}
-                    smooth={true}
-                    duration={1000}
-                    offset={-150}
-                    onClick={hideCollapse}
-                    className="nav-link"
-                  >
-                    Контакты
-                  </ScrollLink>
+                  <ScrollButton to="contact" spy smooth duration={500}>
+                    <span className="nav-link">Контакты</span>
+                  </ScrollButton>
                 </li>
               </ul>
               <div className="text-end">
-                <ScrollLink
-                  to="contact"
-                  activeClass="active"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={1200}
-                  onClick={hideCollapse}
-                >
+                <ScrollButton to="contact" duration={500} offset={-100}>
                   <BtnOutline>Заказать проект</BtnOutline>
-                </ScrollLink>
+                </ScrollButton>
               </div>
             </div>
           </div>
@@ -177,32 +173,19 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="contact"
-                  activeClass="active"
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  offset={-90}
-                  onClick={hideCollapse}
-                  className="nav-link"
-                >
-                  Контакты
-                </ScrollLink>
+                <ScrollButton to="contact" smooth duration={800}>
+                  <span onClick={hideCollapse} className="nav-link">
+                    Контакты
+                  </span>
+                </ScrollButton>
               </li>
             </ul>
             <div className="text-end">
-              <ScrollLink
-                to="contact"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={1000}
-                onClick={hideCollapse}
-              >
-                <BtnOutline>Заказать проект</BtnOutline>
-              </ScrollLink>
+              <ScrollButton to="contact" smooth duration={800}>
+                <span onClick={hideCollapse}>
+                  <BtnOutline>Заказать проект</BtnOutline>
+                </span>
+              </ScrollButton>
             </div>
           </div>
         </div>

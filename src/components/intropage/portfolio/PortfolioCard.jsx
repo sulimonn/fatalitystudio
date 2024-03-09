@@ -4,7 +4,7 @@ import BtnSimple from 'components/utils/btn/BtnSimple';
 import useGetServiceType from 'components/utils/getServiceType';
 
 function PortfolioCard({ data }) {
-  const serviceType = useGetServiceType(data.service_id);
+  const serviceType = useGetServiceType(data?.service_id);
   useEffect(() => {
     const cards = document.querySelectorAll('.portfolio-card');
     const handleResize = () => {

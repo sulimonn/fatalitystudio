@@ -93,8 +93,8 @@ function Contact() {
   };
 
   return (
-    <div className="contact" id="contact">
-      <div className="contact-content">
+    <div className="contact">
+      <div className="contact-content" id="contact">
         <div className="contact-text">
           <div className="contact-text-title">
             <h3 className="headline3 pointer-all">Давайте обсудим ваш проект прямо сейчас</h3>
