@@ -5,6 +5,10 @@ import { useAddTaskMutation, useGetServicesQuery } from 'store/reducers/serviceA
 
 import { FormHelperText } from '@mui/material';
 
+// redux
+import { useDispatch } from 'react-redux';
+import { openSnackbar } from 'store/reducers/snackbar';
+
 function Contact() {
   const { data: services = [] } = useGetServicesQuery();
   const [addTask] = useAddTaskMutation();
@@ -14,13 +18,14 @@ function Contact() {
   const [errors, setErrors] = useState();
   const [unsetOption, setUnsetOpt] = useState(selectedOption);
 
-  const handleSelectChange = (option) => {
-    setSelectedOption(option);
+  const dispatch = useDispatch();
 
+  const handleSelectChange = (option) => {
+    setSelectedOption(() => option);
     setErrors({ ...errors, service_id: null });
     setTask({ ...task, service_id: option.id });
     setDropdownOpen(false);
-    setUnsetOpt(selectedOption);
+    setUnsetOpt(() => option);
   };
 
   const handleMouseOver = (option) => {
@@ -28,6 +33,7 @@ function Contact() {
   };
 
   const handleMouseLeave = () => {
+    console.log('1');
     setSelectedOption(unsetOption);
   };
 
@@ -48,13 +54,16 @@ function Contact() {
       if (response.error) setErrors(response.error.data);
       else {
         setTask({});
-        alert('Ваша заявка успешно отправлена');
+        setSelectedOption('Интересующая услуга');
+        setUnsetOpt('Интересующая услуга');
+        dispatch(openSnackbar());
       }
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(task);
     if (name !== 'phone_number') setTask({ ...task, [name]: value });
     else {
       const digitsOnly = value.replace(/\D/g, '');
@@ -84,8 +93,8 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
-      <div className="contact-content" id="contact">
+    <div className="contact" id="contact">
+      <div className="contact-content">
         <div className="contact-text">
           <div className="contact-text-title">
             <h3 className="headline3 pointer-all">Давайте обсудим ваш проект прямо сейчас</h3>

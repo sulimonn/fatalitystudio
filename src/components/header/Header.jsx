@@ -134,6 +134,7 @@ function Header() {
                     spy={true}
                     smooth={true}
                     duration={1000}
+                    offset={-150}
                     onClick={hideCollapse}
                     className="nav-link"
                   >
@@ -147,6 +148,7 @@ function Header() {
                   activeClass="active"
                   spy={true}
                   smooth={true}
+                  offset={-150}
                   duration={1200}
                   onClick={hideCollapse}
                 >
@@ -181,6 +183,7 @@ function Header() {
                   spy={true}
                   smooth={true}
                   duration={1000}
+                  offset={-90}
                   onClick={hideCollapse}
                   className="nav-link"
                 >

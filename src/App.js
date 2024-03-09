@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 import 'components/utils/typography/typography.css';
 
 // components
+import ScrollTop from 'components/utils/ScrollTop';
 import Contact from 'components/contact/Contact';
 import Header from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import ParticlesComponent from 'components/PartclesComponent';
 import Routes from './routes';
-import ScrollTop from 'components/utils/ScrollTop';
+import Popup from 'components/utils/Popup';
 
 function App() {
   const [particlesKey, setParticlesKey] = useState(0);
@@ -29,6 +30,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
+      <Popup />
     </ScrollTop>
   );
 }
