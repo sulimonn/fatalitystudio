@@ -26,7 +26,6 @@ function Project() {
     }
   }, [project, services]);
   useEffect(() => {
-    window.scrollTo(0, 0);
     const navBlogElement = document.querySelectorAll('.navportfolio');
     if (navBlogElement) {
       document.querySelectorAll('.nav-link').forEach((item) => {
@@ -44,37 +43,45 @@ function Project() {
 
   return (
     <section className="project-page">
-      <div className="project-head-img" style={{ backgroundColor: project.color }}>
+      <Box
+        className="project-head-img pointer-all"
+        sx={{
+          backgroundColor: project.color,
+          py: { xs: 3, md: 10 },
+          borderRadius: { xs: 5, md: 10 },
+        }}
+      >
         <img className="icon" src={project.background_1} alt="background_1" />
         <img
           className="bg"
           src={project.background_2 === null ? project.background_1 : project.background_2}
           alt="background_2"
         />
-        <div className="phones">
+        <Box width={{ xs: '100%', md: '80%' }} className="phones">
           {project.big_photos
             .map((item) => JSON.parse(item))
+            .sort((a, b) => a.index_number - b.index_number)
             .map((item, index) => (
               <>
-                <Box width={'100%'} height={{ xs: '80%', sm: '90%', md: '100%' }} key={item.id}>
+                <Box width={'100%'} height={'auto'} key={item.id}>
                   <img
                     loading="lazy"
                     onLoad={handleImageLoad}
                     key={index}
-                    src={`http://79.174.82.88/${item.upload}`}
+                    src={item.upload}
                     alt="big photos"
                     style={{
                       display: 'block',
-                      width: 'auto',
-                      height: '100%',
+                      width: '100%',
+                      height: 'auto',
                       objectFit: 'cover',
                     }}
                   />
                 </Box>
               </>
             ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       <div className="project-content">
         <h1 className={'headline2 ' + serviceType}>

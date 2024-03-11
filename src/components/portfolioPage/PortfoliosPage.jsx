@@ -6,7 +6,7 @@ import { useGetProjectQuery } from 'store/reducers/portfolio';
 import { Box, CircularProgress } from '@mui/material';
 
 function PorrtfoliosPage() {
-  const { data: portfolios = [], isLoading } = useGetProjectQuery();
+  const { data: portfoliolist = [], isLoading } = useGetProjectQuery();
   useEffect(() => {
     window.scrollTo(0, 0);
     const navBlogElement = document.querySelectorAll('.navportfolio');
@@ -24,24 +24,29 @@ function PorrtfoliosPage() {
       </Box>
     );
   }
+  const subArrayLength = 3;
+  const sortedList = [...portfoliolist].sort((a, b) => b.index_number - a.index_number);
+  const portfolios = Array.from(
+    { length: Math.ceil(sortedList.length / subArrayLength) },
+    (_, index) => sortedList.slice(index * subArrayLength, index * subArrayLength + subArrayLength),
+  );
 
   return (
     <section className="portfolios_page pt-5">
       <h2 className="headline2 pointer-all">Портфолио</h2>
       <div className="portfolios_container">
-        <div className="portfolio-cards">
-          {portfolios.map((item) => (
-            <PortfolioCard key={item.id} data={item} />
-          ))}
-        </div>
-        <div className="portfolio-cards">
-          <PortfolioCard key={portfolios[0]?.id} data={portfolios[0]} />
-        </div>
-        <div className="portfolio-cards">
-          {portfolios?.map((item) => (
-            <PortfolioCard key={item.id} data={item} />
-          ))}
-        </div>
+        {portfolios.map((projects) => (
+          <>
+            <div className="portfolio-cards" key={projects[0]?.id}>
+              {projects.slice(0, 2).map((item) => (
+                <PortfolioCard key={item.id} data={item} />
+              ))}
+            </div>
+            <div className="portfolio-cards">
+              <PortfolioCard key={projects[2]?.id} data={projects[2]} />
+            </div>
+          </>
+        ))}
       </div>
     </section>
   );

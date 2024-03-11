@@ -7,7 +7,7 @@ const usersApi = createApi({
   }),
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => 'user/all',
+      query: () => 'site_user',
     }),
   }),
 });

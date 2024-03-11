@@ -5,6 +5,11 @@
 }
 .service-page .heading .headline2 {
   line-height: 0.85em;
+  font-size: calc(100vw / 10.2);
+}
+
+.service-page .heading .headline2::first-line {
+  color: var(--color-white);
 }
 .service-page .heading .quote {
   color: var(--color-white);
@@ -85,6 +90,13 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .service-page .heading .quote {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .service-page .heading .quote {
     padding-top: 10px;

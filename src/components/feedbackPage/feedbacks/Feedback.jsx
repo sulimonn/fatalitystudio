@@ -61,7 +61,7 @@ function FeedbackItem({ feedback }) {
           </div>
         </div>
         <div className="feedback__letter">
-          <img src={feedback.src} alt="feedback" loading="lazy" />
+          <img src={feedback.photo} alt="feedback" loading="lazy" />
         </div>
       </div>
     </>

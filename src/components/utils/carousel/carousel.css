@@ -18,3 +18,30 @@
 .swiper-button-prev::after {
   margin-right: 0.15em;
 }
+.carousel-img {
+  height: 400px;
+}
+
+@media screen and (max-width: 1190px) {
+  .carousel-img {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .carousel-img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .carousel-img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .carousel-img {
+    height: 150px;
+  }
+}

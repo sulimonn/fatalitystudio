@@ -17,8 +17,10 @@ function Advantages() {
 
   return (
     <div className="content">
-      <h3 className="headline3 pointer-all">преимущества</h3>
-      <div className="advatges-right-side">
+      <div className="advatges-title left-side">
+        <h3 className="headline3 pointer-all ">преимущества</h3>
+      </div>
+      <div className="advatges-right-side right-side">
         <div className="row d-flex">
           <div className="advatges-about col-lg-6 col-md-12 offset-md-0 offset-lg-6">
             <p className="paragraph pointer-all">

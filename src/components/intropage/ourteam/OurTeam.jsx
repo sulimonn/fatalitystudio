@@ -16,8 +16,11 @@ function OurTeam() {
   }
   return (
     <div className="content">
-      <h3 className="headline3 pointer-all">НАША Команда</h3>
-      <div className="ourteam-items">
+      <div className="ourteam-title left-side">
+        {' '}
+        <h3 className="headline3 pointer-all">НАША Команда</h3>
+      </div>
+      <div className="ourteam-items right-side">
         {team_list.map((item) => {
           return <TeamCard key={item.id} id={item.id} />;
         })}

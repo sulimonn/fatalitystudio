@@ -66,7 +66,7 @@ const Popup = () => {
         </svg>
 
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             mt: 2,
             color: 'black',
@@ -76,7 +76,7 @@ const Popup = () => {
         >
           спасибо!
         </Typography>
-        <Typography variant="subtitle1" sx={{ width: '60%', minWidth: '60%' }}>
+        <Typography variant="subtitle2" sx={{ width: '80%', minWidth: '60%' }}>
           Мы перезвоним вам в ближайшее время.
         </Typography>
       </Box>

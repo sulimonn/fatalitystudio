@@ -24,10 +24,8 @@ function ServicePage() {
   }
   const service = data.find((item) => item.id.toString() === id.toString());
   if (!service) return null;
-  console.log(service);
 
   const project = portfolio[0];
-
   return (
     <section className="service-page">
       <div className="heading">
@@ -92,9 +90,12 @@ function ServicePage() {
             <h3 className="headline3 pointer-all">Реализованные проекты</h3>
           </div>
           <div className="portfolio-cards pt-5">
-            {portfolio?.reverse().map((item) => {
-              return <PortfolioCard data={item} />;
-            })}
+            {portfolio
+              .slice()
+              .reverse()
+              .map((item) => {
+                return <PortfolioCard key={item.id} data={item} />;
+              })}
           </div>
           <div className="quote end-text pointer-all">
             Мы создаем надежные приложения, соблюдаем сроки и бюджет, гарантируя вашей идее самый

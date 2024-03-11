@@ -12,7 +12,7 @@ import { openSnackbar } from 'store/reducers/snackbar';
 function Contact() {
   const { data: services = [] } = useGetServicesQuery();
   const [addTask] = useAddTaskMutation();
-  const [task, setTask] = useState({});
+  const [task, setTask] = useState({ name: '', phone_number: '', service_id: '' });
   const [selectedOption, setSelectedOption] = useState('Интересующая услуга');
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [errors, setErrors] = useState();
@@ -63,31 +63,43 @@ function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(task);
-    if (name !== 'phone_number') setTask({ ...task, [name]: value });
-    else {
-      const digitsOnly = value.replace(/\D/g, '');
+    if (name !== 'phone_number') {
+      setTask({ ...task, [name]: value });
+      if (value.length === 0) {
+        setErrors({ ...errors, [name]: 'Поле не может остаться пустым' });
+        return;
+      }
+    } else {
+      const lettersOnly = value.replace(/\d/g, '');
+      if (lettersOnly.length > 0 && !lettersOnly.includes('+')) {
+        setErrors({ ...errors, [name]: 'Введите только цифры' });
+        return;
+      }
+      const inputValue = value.replace(/\D/g, '');
 
+      const numericValue = inputValue.replace(/\D/g, '');
       let formattedValue = '';
-      if (digitsOnly === '7') {
-        // If the input contains only "+7", set it to an empty string
-        formattedValue = '';
-      } else if (digitsOnly.length > 0) {
-        formattedValue = '+7';
-        if (digitsOnly.length > 1) {
-          formattedValue += ' ' + digitsOnly.slice(1, 4);
-        }
-        if (digitsOnly.length > 4) {
-          formattedValue += ' ' + digitsOnly.slice(4, 7);
-        }
-        if (digitsOnly.length > 7) {
-          formattedValue += ' ' + digitsOnly.slice(7, 9);
-        }
-        if (digitsOnly.length > 9) {
-          formattedValue += ' ' + digitsOnly.slice(9, 11);
-        }
+      if (numericValue.length === 1) {
+        if (task.phone_number.length === 0) formattedValue = '+7 ' + numericValue;
+      } else if (numericValue.length > 1) {
+        formattedValue =
+          '+7 ' +
+          numericValue
+            .slice(1, 11)
+            .replace(/(\d{1,3})?(\d{1,3})?(\d{1,2})?(\d{1,2})?/, function (match, p1, p2, p3, p4) {
+              let formattedNumber = '';
+              if (p1) formattedNumber += p1;
+              if (p2) formattedNumber += ' ' + p2;
+              if (p3) formattedNumber += ' ' + p3;
+              if (p4) formattedNumber += ' ' + p4;
+              return formattedNumber;
+            });
       }
       setTask({ ...task, [name]: formattedValue });
+      if (formattedValue.length === 0) {
+        setErrors({ ...errors, [name]: 'Поле не может остаться пустым' });
+        return;
+      }
     }
     setErrors({ ...errors, [name]: null });
   };

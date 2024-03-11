@@ -11,14 +11,16 @@ function Portfolio() {
   }
   return (
     <div className="portfolio content" id="portfolio">
-      <div className="portfolio-title">
+      <div className="left-side portfolio-title">
         <h3 className="headline3 pointer-all">Портфолио</h3>
       </div>
-      <div className="portfolio-rigt-side">
+      <div className="portfolio-rigt-side right-side">
         <div className="portfolio-cards">
-          {portfolios.map((item) => (
-            <PortfolioCard key={item.id} data={item} />
-          ))}
+          {[...portfolios]
+            .sort((a, b) => b.index_number - a.index_number)
+            .map((item) => (
+              <PortfolioCard key={item.id} data={item} />
+            ))}
         </div>
         <div className="portfolio-link">
           <a href="/portfolio">

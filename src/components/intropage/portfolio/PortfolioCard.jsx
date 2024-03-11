@@ -33,37 +33,29 @@ function PortfolioCard({ data }) {
   return (
     <Link
       to={'/portfolio/' + data.id}
-      className={`portfolio-card group ` + serviceType}
+      className={`portfolio-card pointer-all group ` + serviceType}
       style={{ background: data.color }}
     >
       <div className="portfolio-card-text">
-        <h5 className="headline4 pointer-all">{data.title}</h5>
-        <p className="paragraph pointer-all">{data.description}</p>
+        <h5 className="headline4">{data.title}</h5>
+        <p className="paragraph">{data.description}</p>
       </div>
       <div className="portfolio-card-img">
-        <div className="portfolio-card-img-svg">
-          <img
-            loading="lazy"
-            className={serviceType + ' pointer-all'}
-            src={data.background_1}
-            alt={data.title}
-          />
-        </div>
-        <div className="portfolio-card-img-phone">
-          {serviceType !== 'website' && (
+        {data.background_1 && (
+          <div className="portfolio-card-img-svg">
             <img
               loading="lazy"
-              src={data.background_2}
-              alt=""
-              className={'bg pointer-all ' + serviceType}
+              className={serviceType + ''}
+              src={data.background_1}
+              alt={data.title}
             />
+          </div>
+        )}
+        <div className="portfolio-card-img-phone">
+          {data.background_2 && (
+            <img loading="lazy" src={data.background_2} alt="" className={'bg ' + serviceType} />
           )}
-          <img
-            loading="lazy"
-            className={'phone pointer-all ' + serviceType}
-            src={data.cover}
-            alt="pic"
-          />
+          <img className={'phone ' + serviceType} src={data.cover} alt="pic" />
         </div>
       </div>
       <span className="position-absolute">

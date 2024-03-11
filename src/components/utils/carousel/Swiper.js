@@ -13,56 +13,47 @@ const SwiperComponent = ({ data, bg }) => {
   }
   const slides = [];
   for (let i = 0; i < data.length; i += 3) {
-    const item = data.slice(i, i + 3);
+    const item = data.sort((a, b) => a.index_number - b.index_number).slice(i, i + 3);
     const slide = (
-      <SwiperSlide key={i} style={{ height: '100%' }}>
-        <Box width={'80%'} height={{ xs: '300px', md: '600px' }} mx={'auto'}>
+      <SwiperSlide key={i} style={{ backgroundColor: bg, borderRadius: 20 }}>
+        <Box sx={{ py: { xs: 3, md: 5 } }} width={'100%'} height={'100%'} overflow={'hidden'}>
           <Box
-            width={'100%'}
             height={'100%'}
+            width={'100%'}
             display={'flex'}
             justifyContent={'center'}
             alignItems={'center'}
-            gap={3}
+            px={{ xs: 1, sm: 3, md: 10 }}
           >
             {item.map((sub, index) => {
               return (
                 <Box
-                  item
                   key={index}
-                  height={'95%'}
+                  height={'100%'}
+                  width={'min-content'}
                   display={'flex'}
-                  justifyContent={'center'}
+                  flexDirection={'column'}
                   alignItems={'center'}
+                  justifyContent={'center'}
                 >
-                  <Box
-                    height={'60%'}
-                    width={'100%'}
-                    display={'flex'}
-                    flexDirection={'column'}
-                    alignItems={'center'}
-                    justifyContent={'center'}
-                  >
-                    {false && (
-                      <div className="img px-5">
-                        <span className="spinner-border text-warning m-5" role="status"></span>
-                      </div>
-                    )}
-                    <img
-                      loading="lazy"
-                      src={`http://79.174.82.88${sub.upload}`}
-                      alt="carousel"
-                      style={{
-                        display: 'block',
-                        width: 'auto',
-                        height: '100%',
-                        objectFit: 'cover',
-                      }}
-                    />
-                    <Typography mt={1} variant="subtitle2" textAlign={'center'}>
-                      {sub?.title}
-                    </Typography>
-                  </Box>
+                  {false && (
+                    <div className="img px-5">
+                      <span className="spinner-border text-warning m-5" role="status"></span>
+                    </div>
+                  )}
+                  <img
+                    loading="lazy"
+                    src={sub.upload}
+                    alt="carousel"
+                    className="carousel-img"
+                    style={{
+                      display: 'block',
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <Typography fontWeight={'200'} variant="caption" textAlign={'center'}>
+                    {sub?.title}
+                  </Typography>
                 </Box>
               );
             })}
@@ -73,19 +64,18 @@ const SwiperComponent = ({ data, bg }) => {
     slides.push(slide);
   }
   return (
-    <Box height={{ xs: '300px', md: '600px' }} backgroundColor={bg} borderRadius={4}>
-      <div className="pointer-all" style={{ height: '100%', width: '100%' }}>
-        <Swiper
-          modules={[Navigation, Pagination, A11y]}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-        >
-          {slides}
-        </Swiper>
-      </div>
-    </Box>
+    <div className="pointer-all" style={{ height: 'min-content' }}>
+      <Swiper
+        style={{ height: 'min-content' }}
+        modules={[Navigation, Pagination, A11y]}
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+      >
+        {slides}
+      </Swiper>
+    </div>
   );
 };
 
